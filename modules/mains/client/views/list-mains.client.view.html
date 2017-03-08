@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Mains</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="main in vm.mains"
+       ui-sref="mains.view({ mainId: main._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="main.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="main.user" ng-bind="main.user.displayName"></span>
+        <span ng-if="!main.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="main.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.mains.$resolved && !vm.mains.length">
+    No Mains yet, why don't you <a ui-sref="mains.consulta">create one</a>?
+  </div>
+</section>

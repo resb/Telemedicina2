@@ -1,0 +1,78 @@
+    <div id="page-wrapper" class="bg2">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a ui-sref="home">Inicio</a></li>
+                        <li><strong>Emergencias</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel">
+                    <ul class="nav nav-tabs" style="padding-left: 30%">
+                      <li><a class="tab1" ui-sref="mains.emergencia">Emergencias</a></li>
+                      <li class="active"><a class="tab2" href="#q2">Mis citas virtuales</a></li>
+                      <li><a class="tab3" ui-sref="mains.informacion">Mi Información</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="q1" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="col-md-4">
+                                   <img src="/modules/mains/client/img/img1.jpg" class="img-responsive">
+                                </div>
+                                <div class="col-md-8">
+                                    <h2>Editar cita</h2>
+                                        <div class="col-md-6">
+                                            <label><strong>Doctor:</strong> Carlos Mendoza</label>
+                                            <label><strong>Especialidad:</strong> Cardiología</label>
+                                            <label><strong>Cita:</strong> 10.00 am</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="checkbox" name="vehicle" value="Car"> <strong>S/. 50</strong> - Particular<br>
+                                            <input type="checkbox" name="vehicle" value="Car" checked> <strong>S/. 0</strong> - Pacifico Seguros<br>
+                                            <input type="checkbox" name="vehicle" value="Car"> <strong>S/. 30</strong> - Rimac Seguros<br>
+                                        </div>
+
+                                    <div class="pull-right" style="clear: both; padding-top: 35px">
+                                    <a ui-sref="mains.editarPopup"><img src="/modules/mains/client/img/btn3.png" class="responsive"></a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div id="q2" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <img src="/modules/mains/client/images/tab2.png" class="img-responsive">
+                            </div>
+                            <div class="col-md-1"></div>                        
+                        </div>
+                      </div>
+                      <div id="q3" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <img src="/modules/mains/client/images/tab3.png" class="img-responsive">
+                            </div>
+                            <div class="col-md-1"></div>                          
+                        </div>
+                      </div>
+                    </div>                        
+                    </div>
+
+                </div>
+            </div>
+            <!-- ... Your content goes here ... -->
+
+        </div>
+    </div>

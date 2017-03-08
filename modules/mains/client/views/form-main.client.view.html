@@ -1,0 +1,79 @@
+<section>
+     <div id="page-wrapper" class="bg2">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a ui-sref="home">Inicio</a></li>
+                        <li><strong>Emergencias</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel">
+                    <ul class="nav nav-tabs" style="padding-left: 30%">
+                      <li class="active"><a class="tab1" href="#q1">Emergencias</a></li>
+                      <li><a class="tab2" ui-sref="mains.citas">Mis citas virtuales</a></li>
+                      <li><a class="tab3" ui-sref="mains.informacion">Mi Información</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <div id="q1" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="col-md-4">
+                                   <img src="/modules/mains/client/img/img1.jpg" class="img-responsive">
+                                </div>
+                                <div class="col-md-8">
+                                    <h2>Selecciona tu opción de atención</h2>
+                                    <input type="checkbox" name="vehicle" value="Car"> <strong>S/. 50</strong> - Particular<br>
+                                    <input type="checkbox" name="vehicle" value="Car" checked> <strong>S/. 0</strong> - Pacifico Seguros<br>
+                                    <input type="checkbox" name="vehicle" value="Car"> <strong>S/. 30</strong> - Rimac Seguros<br>
+                                    <p>Seleccionar tarjeta</p>
+                                     <select>
+                                        <option value="">Seleccione:</option>
+                                        <option value="">Visa</option>
+                                        <option value="">MasterCard</option>
+                                        <option value="">Discover</option>
+                                    </select> 
+                                    <div class="pull-right" style="clear: both;">
+                                    <a ui-sref="mains.atencionpopup"><img src="/modules/mains/client/img/btn3.png" class="responsive"></a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                      </div>
+                      <div id="q2" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <img src="/modules/mains/client/img/tab2.png" class="img-responsive">
+                            </div>
+                            <div class="col-md-1"></div>                        
+                        </div>
+                      </div>
+                      <div id="q3" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <img src="/modules/mains/client/img/tab3.png" class="img-responsive">
+                            </div>
+                            <div class="col-md-1"></div>                          
+                        </div>
+                      </div>
+                    </div>                        
+                    </div>
+
+                </div>
+            </div>
+            <!-- ... Your content goes here ... -->
+
+        </div>
+    </div>
+</section>

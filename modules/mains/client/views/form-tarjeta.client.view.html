@@ -1,0 +1,75 @@
+    <main id="main-section">     
+      <nav class="open" id="main-menu" style="padding-top: 15px">
+        <ul>
+          <li class="header text-center">MENÚ</li>
+          <li><a ui-sref="mains.informacion"><img src="/modules/mains/client/img/TelHealth_14.png"><span>Datos generales</span></a></li>
+          <li class="active"><a ui-sref="mains.tarjeta"><img src="/modules/mains/client/img/TelHealth_27.png"><span>Registrar Tarjeta</span></a></li>
+          <li><a ui-sref="mains.alergia"><img src="/modules/mains/client/img/TelHealth_33.png"><span>Alergias</span></a></li>
+          <li><a ui-sref="mains.habitos"><img src="/modules/mains/client/img/TelHealth_35.png"><span>Hábitos</span></a></li>
+          <li><a ui-sref="mains.enfermedades"><img src="/modules/mains/client/img/TelHealth_37.png"><span>Enfermedades Pre existentes</span></a></li>
+          <li><a ui-sref="mains.tratamientos"><img src="/modules/mains/client/img/TelHealth_39.png"><span>Tratamientos actuales</span></a></li>
+          <li><a ui-sref="mains.operaciones"><img src="/modules/mains/client/img/TelHealth_41.png"></img><span>Operaciones realizadas</span></a></li>
+          <li><a ui-sref="mains.historial"><img src="/modules/mains/client/img/TelHealth_43.png"><span>Historia familiar</span></a></li>
+        </ul>
+      </nav>
+        <div id="content-box">
+          <br/>
+        <div class="container-fluid">
+          <div id="breadcrumb">
+            <ol class="breadcrumb">
+              <li><a ui-sref="home">Inicio</a></li>
+              <li><span>Registrar tarjeta</span></li>
+            </ol>
+          </div>
+          <div id="content">
+            <div id="informacion-alergias">
+              <div class="text-center">
+                <ul class="list-inline" id="list-links">
+                  <li><a ui-sref="mains.emergencia"><img src="/modules/mains/client/img/TelHealth_18.png"><span>EMERGENCIAS</span></a></li>
+                  <li><a ui-sref="mains.citas"><img src="/modules/mains/client/img/TelHealth_20.png"><span>MIS CITAS VIRTUALES</span></a></li>
+                  <li class="active"><a href="mi-informacion-datos-generales.html"><img src="/modules/mains/client/img/TelHealth_22.png"><span>MI INFORMACIÓN</span></a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                  <h2 class="title"><img src="/modules/mains/client/img/TelHealth_51.png"><span>ELEGIR MEDIOS DE PAGO</span></h2>
+                  <figure><img src="/modules/mains/client/img/TelHealth_54.png"></figure>
+                  <div class="form-horizontal">
+                    <div class="form-group">
+                      <div class="col-sm-5">
+                        <label class="control-label">Seleccionar tarjeta:</label>
+                        <select class="form-control"></select>
+                      </div>
+                      <div class="col-sm-7">
+                        <label class="control-label">Número de tarjeta</label>
+                        <input class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-4">
+                        <label class="control-label">Codigo de seguridad:</label>
+                        <input class="form-control">
+                      </div>
+                      <div class="col-sm-6 col-sm-offset-1">
+                        <label class="control-label">Fecha de expiración</label>
+                        <div class="form-group">
+                          <div class="col-sm-5">
+                            <input class="form-control">
+                          </div>
+                          <div class="col-sm-7">
+                            <select class="form-control"></select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal-actualizar-informacion">Agregar tarjeta<i class="fa fa-chevron-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>     
+    </main>
