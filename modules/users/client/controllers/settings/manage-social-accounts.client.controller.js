@@ -5,7 +5,7 @@ angular.module('users').controller('SocialAccountsController', ['$scope', '$http
     $scope.user = Authentication.user;
     $scope.meeting = {};
     $scope.idMeeting = null;
-    $scope.flag = false;
+    $scope.flag = false;  
 
   $scope.listarMeeting = function() { 
     if(!$scope.flag){

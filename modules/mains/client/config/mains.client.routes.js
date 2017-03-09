@@ -103,6 +103,8 @@
       .state('mains.atencion', {
         url: '/atencion',
         templateUrl: 'modules/mains/client/views/form-atencion.client.view.html',
+        controller: 'MainsController',
+        controllerAs: 'vm',
         resolve: {
           mainResolve: newMain
         },
@@ -114,6 +116,8 @@
       .state('mains.atencionCita', {
         url: '/atencionCita',
         templateUrl: 'modules/mains/client/views/form-atencion-cita.client.view.html',
+         controller: 'MainsController',
+        controllerAs: 'vm',
         resolve: {
           mainResolve: newMain
         },

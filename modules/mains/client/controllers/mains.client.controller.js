@@ -17,6 +17,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.fecha = new Date().toJSON().slice(0, 10).replace(new RegExp("-", 'g'), "/").split("/").reverse().join("/");
 
     // Remove existing Main
     function remove() {
