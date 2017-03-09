@@ -24,7 +24,7 @@ module.exports = {
     },
     css: [
       'modules/*/client/css/*.css',
-      'public/lib/main/css/*.css',
+      'modules/mains/client/css/main/css/*.css',
       'public/lib/main/css/dataTables/*.css'
     ],   
     less: [
@@ -38,7 +38,7 @@ module.exports = {
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
       'modules/*/client/**/*.js',
-      'public/lib/main/js/*.js'
+      'modules/mains/client/main/js/*.js',
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']

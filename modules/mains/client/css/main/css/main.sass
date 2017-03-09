@@ -1,0 +1,297 @@
+@import "bourbon/bourbon"
+@mixin opacity($opacity)
+	opacity: $opacity
+	$opacity-ie: $opacity * 100
+	filter: alpha(opacity=$opacity-ie)
+@mixin text-left
+	text-align: left
+@mixin text-center
+	text-align: center
+@mixin text-right
+	text-align: right
+@mixin text-justify
+	text-align: justify
+@mixin left
+	float: left
+@mixin right
+	float: right
+@mixin ulpm
+	margin: 0
+	padding: 0
+	list-style: none
+@mixin ivt
+	display: inline-block
+	vertical-align: top
+@mixin block
+	display: block
+@mixin hide
+	display: none
+@mixin border-radius($num)
+	-webkit-border-radius: $num
+	-moz-border-radius: $num
+	border-radius: $num
+@mixin link-btn
+	@include block
+	@include position(absolute,0 null null 0)
+	@include size(100% 100%)
+	z-index: 50
+@mixin wbg
+	background: rgba(255,255,255,0.8)
+$mainbg: #ba007c
+$wc: #ffffff
+$bc: #000000
+$mc: #ffb400
+$ct: #5bacc2
+$sc: #49b1e2
+$sitewidth: 1050px
+.left
+	@include left()
+.right
+	@include right()
+.block
+	@include block
+.btn-link
+	@include link-btn
+	z-index: 100
+.ivt
+	@include ivt
+	@include position
+.img-right
+	@include margin(null null 10px 10px)
+	float: right
+.img-left
+	@include margin(10px 10px null null)
+	float: left
+.btn
+	border: none
+	i
+		margin-left: 10px
+.btn-danger
+	background: #cd375f
+.btn-primary
+	background: #28b4ff
+body
+	font-family: "Segoe UI"
+	color: #787d82
+table.table
+	thead
+		tr
+			th
+				background: #28b4ff
+				color: #fff
+				@include text-center
+	tr
+		td
+			vertical-align: middle
+#main-header
+	background: #fbfcfd
+	border-top: 5px solid #28b4ff
+	border-bottom: 2px solid #fff
+	nav.navbar
+		margin-bottom: 3px
+		.navbar-header
+			button.navbar-toggle
+				span
+					background: $wc
+			a.navbar-brand
+				height: auto
+				&#logo
+					@include position
+					@include padding(null 40px null 133px)
+					&:after
+						@include position(absolute,50% 0 null null)
+						@include block
+						border-right: 1px solid #d8dadc
+						z-index: 1
+						@include size(1px 32px)
+						margin-top: -9px
+						content: ""
+			span#title-page
+				color: #cd375f
+				font-size: 15px
+				display: inline-block
+				padding-left: 40px
+				margin-top: 35px
+		#navbar
+			.navbar-form
+				.form-group
+					@include position
+					input
+						padding-right: 50px
+						@include placeholder
+							color: #28afe6
+					button#btn-search
+						@include position(absolute,4px 0 null null)
+						background: none
+						@include border-radius(0)
+						border-left: 1px solid #28afe6
+						@include padding(1px null)
+						i
+							color: #28afe6
+				#user-info
+					color: $wc
+					margin-right: 132px
+					ul
+						margin-bottom: 0
+						margin-top: 20px
+						li
+							margin-left: 10px
+							a
+								text-decoration: none
+								font-size: 15px
+								img
+									margin-right: 5px
+							&#ayuda
+								a
+									span
+										color: #cd375f
+							&#user
+								a
+									span
+										color: #28b4ff
+#breadcrumb
+	@include position
+	a
+		color: #876e1e
+		font-family: "Segoe UI"
+	.breadcrumb > li + li:before
+		content: ">"
+		color: #787d82
+	ol.breadcrumb
+		margin-bottom: 0
+		background: none
+		@include padding(8px null)
+		@include border-radius(0)
+		li
+			font-family: "Segoe UI"
+			color: #787d82
+			span
+				font-weight: bold
+.title
+	font-size: 20px
+	color: #cc375f
+	padding-bottom: 14px
+	border-bottom: 1px solid #dadadb
+	img
+		margin-right: 10px
+.card
+	h3
+		background: #cd375f
+		color: #fff
+		@include text-center
+		@include padding(7px null)
+		font-size: 14px
+		margin-bottom: 3px
+	.content-card
+		background: #fff
+		@include padding(18px)
+		border: 1px solid #e6e8ea
+		margin-bottom: 20px
+#reproductor
+	@include size(100% 470px)
+	background: url(../img/TelHealth_55.png) no-repeat center bottom
+	.btn
+		background: url(../img/TelHealth_56.png)
+		@include size(47px)
+#modal-actualizar-informacion
+	.modal-body
+		background: url(../img/TelHealth_45.png) no-repeat
+		padding-left: 226px
+		padding-top: 43px
+#form-registro
+	#header-form-registro
+		h3
+			background: #28b4ff
+			color: #fff
+			@include text-center
+			font-size: 20px
+			font-weight: normal
+			@include padding(13.5px null)
+			@include margin(0 null 1px)
+	#body-form-registro
+		@include padding(30px 60px)
+		background: #fff
+main#main-section
+	@include position
+	padding-bottom: 50px
+	@include clearfix
+	#main-menu
+		background: #f6f8fa
+		z-index: 9999
+		@include position(absolute,0 null null 0)
+		height: 100%
+		@include transition(all 100ms ease-in)
+		float: left
+		&.open
+			width: 220px
+			ul
+				li
+					a
+						padding-right: 34px
+						@include clearfix
+						img
+							margin-right: 15px
+						span
+							@include block
+							@include right
+							width: 123px
+							overflow: visible
+							height: auto
+		ul
+			@include ulpm
+			li
+				&.header
+					color: #fff
+					background: #c13961
+					@include padding(8px)
+					border-bottom: 1px solid #fff
+				&:nth-child(even)
+					a
+						background: #0f7db9
+				&:nth-child(odd)
+					a
+						background: #0a78b4
+				&:hover,&.active
+					a
+						background: #fff
+						border-left-color: #28b4ff
+						span
+							color: #28b4ff
+				a
+					@include block
+					@include padding(18px 15px)
+					border-left: 7px solid transparent
+					@include transition(all 300ms linear)
+					span
+						color: #fff
+	#content-box
+		margin-left: 220px
+		@include padding(15px 185px null 60px)
+		background: #deebf0
+		background: -moz-linear-gradient(top,  #deebf0 0%, #e4eef2 9%, #f3f8fa 17%, #ffffff 100%)
+		background: -webkit-linear-gradient(top,  #deebf0 0%,#e4eef2 9%,#f3f8fa 17%,#ffffff 100%)
+		background: linear-gradient(to bottom,  #deebf0 0%,#e4eef2 9%,#f3f8fa 17%,#ffffff 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deebf0', endColorstr='#ffffff',GradientType=0 )
+		#content
+			padding-left: 60px
+			padding-top: 28px
+			ul#list-links
+				li
+					a
+						color: #787d82
+						font-size: 12.5px
+						@include padding(null 25px)
+						border-right: 1px solid #d8dadc
+						@include block
+						img
+							margin-right: 10px
+					&.active
+						a
+							color: #cd375f
+					&:last-child
+						a
+							border-right: none
+@media (max-width:767px)
+@media (min-width:768px)
+@media (min-width:992px)
+@media (min-width:1200px)
