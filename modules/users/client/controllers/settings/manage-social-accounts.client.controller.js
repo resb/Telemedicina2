@@ -25,22 +25,18 @@ angular.module('users').controller('SocialAccountsController', ['$scope', '$http
              }, 1000) 
 }
 
-$scope.selectMeeting = function(idmeeting) {
-		$scope.idMeeting = idmeeting;
-    Zoom.endMeeting({ meeting_number: idmeeting },
-
+    $scope.selectMeeting = function(idmeeting) {
+		  $scope.idMeeting = idmeeting;
+      Zoom.endMeeting({ meeting_number: idmeeting },
                 function (result) {
-
-                    $('#api_title').html("End Meeting");
-               
-
+                    $('#api_title').html("End Meeting");              
                 });
-          $scope.borrarMeeting(idmeeting);           
-          $scope.listarMeeting();  
-           setTimeout(function() {
-                     $('#btn_listar').click();
+      $scope.borrarMeeting(idmeeting);           
+      $scope.listarMeeting();  
+      setTimeout(function() {
+                $('#btn_listar').click();
                  }, 2000)           
-            return false;		
+          return false;		
 	};
 
    $scope.borrarMeeting = function(idmeeting) { 
@@ -53,32 +49,30 @@ $scope.selectMeeting = function(idmeeting) {
                     
                 });
             return false;
-};
+    };
 
-$scope.login = function() {
-  Zoom.init("https://www.zoom.us/api/v1");
+    $scope.login = function() {
+      Zoom.init("https://www.zoom.us/api/v1");
                 //Remember to put your email and password to login
-                Zoom.login({ email: "msouga@gmail.com", password: "Pablito12@Zoom" }, function (result) {
-
+            Zoom.login({ email: "msouga@gmail.com", password: "Pablito12@Zoom" }, function (result) {
                     $('#btn_login').val("login completado");
-
-
                 });
 
-                return false;
-};
+             return false;
+    };
 
-$scope.endAll = function() {
-  console.log($scope.meeting.length);
-  for (var i = 0; i < $scope.meeting.length; i++) { 
-    console.log($scope.meeting[i].id);
-    $scope.borrarMeeting($scope.meeting[i].id);
-};
-$scope.listarMeeting();
-    setTimeout(function() {
-                     $('#btn_listar').click();
+    $scope.endAll = function() {
+      console.log($scope.meeting.length);
+      for (var i = 0; i < $scope.meeting.length; i++) { 
+        console.log($scope.meeting[i].id);
+        $scope.borrarMeeting($scope.meeting[i].id);
+    };
+
+      $scope.listarMeeting();
+        setTimeout(function() {
+              $('#btn_listar').click();
                  }, 2000)   
-}
+    }
 
     // Check if there are additional accounts
     $scope.hasConnectedAdditionalSocialAccounts = function (provider) {

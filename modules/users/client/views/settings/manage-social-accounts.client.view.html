@@ -72,18 +72,3 @@
 
     <p id="errMsg"></p>
 </section>
-<script>
-$('#btn_login').click(function () {
-
-            Zoom.init("https://www.zoom.us/api/v1");
-            //Remember to put your email and password to login
-            Zoom.login({ email: "msouga@gmail.com", password: "Pablito12@Zoom" }, function (result) {
-
-                $('#btn_login').val("login success");
-
-            });
-
-            return false;
-        });
-     
-</script>
