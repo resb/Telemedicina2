@@ -5,13 +5,17 @@ angular.module('users').controller('SocialAccountsController', ['$scope', '$http
     $scope.user = Authentication.user;
     $scope.meeting = {};
     $scope.idMeeting = null;
+    $scope.flag = false;
 
   $scope.listarMeeting = function() { 
+    if(!$scope.flag){
     $scope.login();
+    }
     setTimeout(function() {
             Zoom.listMeeting({ page_size: 100, page_number: 1 }, function (result) {
                 $scope.meeting = result.meetings;
-                console.log($scope.meeting)
+                console.log($scope.meeting);
+                $scope.flag = true;
                 //$('#api_title').html("List Meeting");
 
                 //$('#errMsg').html(JSON.stringify(result));
@@ -35,7 +39,7 @@ $scope.selectMeeting = function(idmeeting) {
           $scope.listarMeeting();  
            setTimeout(function() {
                      $('#btn_listar').click();
-                 }, 1000)           
+                 }, 2000)           
             return false;		
 	};
 
@@ -73,7 +77,7 @@ $scope.endAll = function() {
 $scope.listarMeeting();
     setTimeout(function() {
                      $('#btn_listar').click();
-                 }, 1000)   
+                 }, 2000)   
 }
 
     // Check if there are additional accounts
