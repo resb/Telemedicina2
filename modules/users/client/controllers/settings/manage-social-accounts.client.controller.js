@@ -3,6 +3,62 @@
 angular.module('users').controller('SocialAccountsController', ['$scope', '$http', 'Authentication',
   function ($scope, $http, Authentication) {
     $scope.user = Authentication.user;
+    $scope.meeting = {};
+    $scope.idMeeting = null;
+
+  $scope.listarMeeting = function() { 
+            Zoom.listMeeting({ page_size: 100, page_number: 1 }, function (result) {
+                $scope.meeting = result.meetings;
+                console.log($scope.meeting)
+                //$('#api_title').html("List Meeting");
+
+                //$('#errMsg').html(JSON.stringify(result));
+
+            });           
+            return false;
+}
+
+$scope.selectMeeting = function(idmeeting) {
+		$scope.idMeeting = idmeeting;
+    Zoom.endMeeting({ meeting_number: idmeeting },
+
+                function (result) {
+
+                    $('#api_title').html("End Meeting");
+               
+
+                });
+          $scope.borrarMeeting(idmeeting);           
+          $scope.listarMeeting();  
+           setTimeout(function() {
+                     $('#btn_listar').click();
+                 }, 1000)           
+            return false;		
+	};
+
+   $scope.borrarMeeting = function(idmeeting) { 
+          Zoom.deleteMeeting({ meeting_number: idmeeting },
+
+                function (result) {
+
+                    $('#api_title').html("Delete Meeting");
+
+                    
+                });
+            return false;
+}
+
+$scope.endAll = function() {
+  console.log($scope.meeting.length);
+  for (var i = 0; i < $scope.meeting.length; i++) { 
+    console.log($scope.meeting[i].id);
+    $scope.borrarMeeting($scope.meeting[i].id);
+};
+$scope.listarMeeting();
+    setTimeout(function() {
+                     $('#btn_listar').click();
+                 }, 1000)   
+}
 
     // Check if there are additional accounts
     $scope.hasConnectedAdditionalSocialAccounts = function (provider) {

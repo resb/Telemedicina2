@@ -1,5 +1,5 @@
-<section class="row" ng-controller="SocialAccountsController">
-  <h3 class="col-md-12 text-center" ng-show="hasConnectedAdditionalSocialAccounts()">Connected social accounts:</h3>
+<section class="row" ng-controller="SocialAccountsController" data-ng-init="listarMeeting();">
+  <!--<h3 class="col-md-12 text-center" ng-show="hasConnectedAdditionalSocialAccounts()">Connected social accounts:</h3>
   <div class="col-md-12 text-center">
     <div ng-repeat="(providerName, providerData) in user.additionalProvidersData" class="social-account-container">
       <img ng-src="/modules/users/client/img/buttons/{{providerName}}.png">
@@ -46,5 +46,44 @@
         <i class="glyphicon glyphicon-plus"></i>
       </a>
     </div>
-  </div>
+  </div>-->
+
+<button ng-click="listarMeeting();" id="btn_listar" class="btn btn-info">Listar Meetings</button>
+<button ng-click="endAll();" class="btn btn-info">Borrar Todo</button>
+<br/>
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Id Meeting</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in meeting">
+        <td>{{x.topic}}</td>
+        <td>{{x.id}}</td>
+        <td><button type="button" class="btn btn-success" ng-click="selectMeeting(x.id)">Termina Reunión</button></td>
+      </tr>    
+    </tbody>
+  </table>
+<p id="jsonMstID"></p>
+
+    <p id="errMsg"></p>
 </section>
+<script>
+$('#btn_login').click(function () {
+
+            Zoom.init("https://www.zoom.us/api/v1");
+            //Remember to put your email and password to login
+            Zoom.login({ email: "msouga@gmail.com", password: "Pablito12@Zoom" }, function (result) {
+
+                $('#btn_login').val("login success");
+
+            });
+
+            return false;
+        });
+     
+</script>
