@@ -62,7 +62,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="x in meeting">
-        <td>{{x.topic}}</td>
+        <td>{{x.topic}} el {{x.created_at | date: "MM/dd/yyyy 'hora:' h:mma" }}</td>
         <td>{{x.id}}</td>
         <td><button type="button" class="btn btn-success" ng-click="selectMeeting(x.id)">Termina Reunión</button></td>
       </tr>    

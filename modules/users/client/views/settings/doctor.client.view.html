@@ -1,0 +1,30 @@
+<section class="row" ng-controller="DoctorController" data-ng-init="listarMeeting();">
+  
+<input type="button" ng-click="getLastMeeting();" id="btn_ultimo" hidden/>
+<h2>Reunión pendiente</h2>
+<br/>
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Id Meeting</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{lastMeeting.topic}} {{lastMeeting.created_at | date: "MM/dd/yyyy 'hora:' h:mma" }}</td>
+        <td>{{lastMeeting.id}}</td>
+        <td style="text-align:center"><input type="button" class="btn btn-success" ng-click="getMeeting(lastMeeting.id)" ng-show="flagEmpezar" value="Empezar Reunión"/>&nbsp;<input type="button" class="btn btn-success" ng-click="endMeeting(lastMeeting.id)" ng-show="flagEmpezar" value="Terminar Reunión"/></td>       
+      </tr>    
+    </tbody>
+  </table>
+</section>
+ <span ng-show="emptyMeeting" style="padding-top: 0"><h3>No hay reuniones pendientes<h3></span> 
+<p id="jsonMst"></p>
+
+<p id="errMsg"></p>
+<iframe name="theFrame" hidden></iframe>
+
+</section>
