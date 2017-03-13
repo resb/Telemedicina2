@@ -5,7 +5,8 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/angular-toastr/dist/angular-toastr.min.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -18,6 +19,7 @@ module.exports = {
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         //'public/lib/jquery/dist/jquery.js'
+        'public/lib/angular-toastr/dist/angular-toastr.tpls.js'
 
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

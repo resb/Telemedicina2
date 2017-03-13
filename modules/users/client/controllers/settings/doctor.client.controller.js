@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('DoctorController', ['$scope', '$http', 'Authentication', '$filter',
-  function ($scope, $http, Authentication, $filter) {
+angular.module('users').controller('DoctorController', ['$scope', '$http', 'Authentication', '$filter', 'toastr',
+  function ($scope, $http, Authentication, $filter, toastr) {
     $scope.user = Authentication.user;
     $scope.meeting = {};
     $scope.idMeeting = null;
@@ -30,6 +30,7 @@ angular.module('users').controller('DoctorController', ['$scope', '$http', 'Auth
            }, 2000);
 }
 
+    
 
     $scope.login = function() {
       Zoom.init("https://www.zoom.us/api/v1");
@@ -41,12 +42,15 @@ angular.module('users').controller('DoctorController', ['$scope', '$http', 'Auth
              return false;
     };
 
-    $scope.getLastMeeting = function() {
+    $scope.getLastMeeting = function() {  
+        if($scope.formatMeeting.length != 0){     
             $scope.lastMeeting = $scope.formatMeeting[0];
-            console.log($scope.meeting);
-            $scope.flagEmpezar = true;
-     
+            $scope.flagEmpezar = true; 
+        } else {
+            toastr.info("No existen reuniones pendiente");
+        }            
     }
+
 
     $scope.getMeeting = function(meetingId){
         Zoom.getMeeting({ meeting_number: meetingId},
