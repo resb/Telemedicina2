@@ -1,0 +1,52 @@
+<section>
+  <div class="page-header">
+    <h1>Cronograma de Citas</h1>
+  </div>
+  <div class="right"><button ui-sref="cita.create" id="btn_listar" class="btn btn-info">Programar Cita</button></div>
+  <br/><br/>
+  <br/>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Especialidad</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Opción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="cita in vm.cita | orderBy : 'fecha'">
+        <td>{{cita.doctor}}</td>
+        <td style="text-align:center">{{cita.especialidad}}</td>
+        <td style="text-align:center">{{cita.fecha | date:'dd/MM/yyyy'}}</td>
+        <td style="text-align:center">{{cita.fecha | date:'HH:mm'}}</td>
+        <td style="text-align:center"><a class="btn btn-primary"
+       ui-sref="cita.edit({ citaId: cita._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a></td>
+      </tr>    
+    </tbody>
+  </table>
+
+  <!--<div class="list-group">
+    <a ng-repeat="cita in vm.cita"
+       ui-sref="cita.view({ citaId: cita._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="cita.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="cita.user" ng-bind="cita.user.displayName"></span>
+        <span ng-if="!cita.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="cita.doctor"></h4>
+    </a>
+  </div>-->
+  <div class="alert alert-warning text-center" ng-if="vm.cita.$resolved && !vm.cita.length">
+    No Cita yet, why don't you <a ui-sref="cita.create">create one</a>?
+  </div>
+</section>

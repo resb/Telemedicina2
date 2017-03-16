@@ -5,114 +5,113 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Main = mongoose.model('Main'),
   Cita = mongoose.model('Cita'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
 /**
- * Create a Main
+ * Create a Cita
  */
 exports.create = function(req, res) {
-  var main = new Main(req.body);
-  main.user = req.user;
+  var cita = new Cita(req.body);
+  cita.user = req.user;
 
-  main.save(function(err) {
+  cita.save(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(main);
+      res.jsonp(cita);
     }
   });
 };
 
 /**
- * Show the current Main
+ * Show the current Cita
  */
 exports.read = function(req, res) {
   // convert mongoose document to JSON
-  var main = req.main ? req.main.toJSON() : {};
+  var cita = req.cita ? req.cita.toJSON() : {};
 
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  main.isCurrentUserOwner = req.user && main.user && main.user._id.toString() === req.user._id.toString();
+  cita.isCurrentUserOwner = req.user && cita.user && cita.user._id.toString() === req.user._id.toString();
 
-  res.jsonp(main);
+  res.jsonp(cita);
 };
 
 /**
- * Update a Main
+ * Update a Cita
  */
 exports.update = function(req, res) {
-  var main = req.main;
+  var cita = req.cita;
 
-  main = _.extend(main, req.body);
+  cita = _.extend(cita, req.body);
 
-  main.save(function(err) {
+  cita.save(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(main);
+      res.jsonp(cita);
     }
   });
 };
 
 /**
- * Delete an Main
+ * Delete an Cita
  */
 exports.delete = function(req, res) {
-  var main = req.main;
+  var cita = req.cita;
 
-  main.remove(function(err) {
+  cita.remove(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(main);
+      res.jsonp(cita);
     }
   });
 };
 
 /**
- * List of Mains
+ * List of Cita
  */
 exports.list = function(req, res) {
-  Main.find().sort('-created').populate('cita', 'displayName').exec(function(err, mains) {
+  Cita.find().sort('-created').populate('user', 'displayName').exec(function(err, cita) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(mains);
+      res.jsonp(cita);
     }
   });
 };
 
 /**
- * Main middleware
+ * Cita middleware
  */
-exports.mainByID = function(req, res, next, id) {
+exports.citaByID = function(req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Main is invalid'
+      message: 'Cita is invalid'
     });
   }
 
-  Main.findById(id).populate('user', 'displayName').exec(function (err, main) {
+  Cita.findById(id).populate('user', 'displayName').exec(function (err, cita) {
     if (err) {
       return next(err);
-    } else if (!main) {
+    } else if (!cita) {
       return res.status(404).send({
-        message: 'No Main with that identifier has been found'
+        message: 'No Cita with that identifier has been found'
       });
     }
-    req.main = main;
+    req.cita = cita;
     next();
   });
 };

@@ -79,9 +79,6 @@
         templateUrl: 'modules/mains/client/views/form-citas.client.view.html',
         controller: 'MainsController',
         controllerAs: 'vm',
-        resolve: {
-          mainResolve: newMain
-        },
         data: {
           roles: ['user', 'admin'],
           pageTitle: 'Mis Citas Vituales'

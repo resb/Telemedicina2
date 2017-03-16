@@ -1,0 +1,44 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.cita._id ? 'Editar Cita' : 'Programar Cita'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.citaForm" class="form-horizontal" ng-submit="vm.save(vm.form.citaForm.$valid)" novalidate>
+      <fieldset>
+         <div class="form-group" show-errors>
+          <label class="control-label" for="name">Paciente</label>
+          <input name="doctor" type="text" ng-model="vm.cita.paciente" id="name" class="form-control" placeholder="Nombre Paciente" required>          
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Doctor</label>
+          <input name="doctor" type="text" ng-model="vm.cita.doctor" id="name" class="form-control" placeholder="Nombre" required>
+          <div ng-messages="vm.form.citaForm.doctor.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cita name is required.</p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label class="control-label" for="name">Especialidad</label>
+          <input name="especialidad" type="text" ng-model="vm.cita.especialidad" id="especialidad" class="form-control" placeholder="Especialidad" required>
+          <div ng-messages="vm.form.citaForm.especialidad.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cita Especialidad is required.</p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label class="control-label" for="name">Fecha</label>
+          <input name="fecha" type="date" ng-model="vm.cita.fecha" id="name" class="form-control" placeholder="Fecha" required>
+          <div ng-messages="vm.form.citaForm.fecha.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Fecha is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-info">{{vm.cita._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  
+</section>

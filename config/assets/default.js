@@ -4,9 +4,10 @@ module.exports = {
   client: {
     lib: {
       css: [
+        'public/lib/angular-moment-picker/dist/angular-moment-picker.css',
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/angular-toastr/dist/angular-toastr.min.css'
+        'public/lib/angular-toastr/dist/angular-toastr.min.css'       
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -18,8 +19,11 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        //'public/lib/jquery/dist/jquery.js'
-        'public/lib/angular-toastr/dist/angular-toastr.tpls.js'
+        'public/lib/jquery/dist/jquery.js',
+        'public/lib/angular-toastr/dist/angular-toastr.tpls.js',
+        'public/lib/moment/min/moment-with-locales.js',
+        'public/lib/angular-moment-picker/dist/angular-moment-picker.min.js'
+
 
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
