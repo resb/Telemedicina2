@@ -72,7 +72,8 @@ exports.delete = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(cita);
+      //res.jsonp(cita);
+      console.log("borrado")
     }
   });
 };

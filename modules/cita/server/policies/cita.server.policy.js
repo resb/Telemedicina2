@@ -28,7 +28,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get', 'post']
     }, {
       resources: '/api/cita/:citaId',
-      permissions: ['get']
+      permissions: ['get', 'delete']
     }]
   }, {
     roles: ['guest'],
