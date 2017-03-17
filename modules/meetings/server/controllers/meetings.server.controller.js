@@ -5,30 +5,14 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Main = mongoose.model('Main'),
   Meeting = mongoose.model('Meeting'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
 /**
- * Create a Main
+ * Create a Meeting
  */
 exports.create = function(req, res) {
-  var main = new Main(req.body);
-  main.user = req.user;
-
-  main.save(function(err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.jsonp(main);
-    }
-  });
-};
-
-exports.createMeeting = function(req, res) {
   var meeting = new Meeting(req.body);
   meeting.user = req.user;
 
@@ -42,91 +26,92 @@ exports.createMeeting = function(req, res) {
     }
   });
 };
+
 /**
- * Show the current Main
+ * Show the current Meeting
  */
 exports.read = function(req, res) {
   // convert mongoose document to JSON
-  var main = req.main ? req.main.toJSON() : {};
+  var meeting = req.meeting ? req.meeting.toJSON() : {};
 
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  main.isCurrentUserOwner = req.user && main.user && main.user._id.toString() === req.user._id.toString();
+  meeting.isCurrentUserOwner = req.user && meeting.user && meeting.user._id.toString() === req.user._id.toString();
 
-  res.jsonp(main);
+  res.jsonp(meeting);
 };
 
 /**
- * Update a Main
+ * Update a Meeting
  */
 exports.update = function(req, res) {
-  var main = req.main;
+  var meeting = req.meeting;
 
-  main = _.extend(main, req.body);
+  meeting = _.extend(meeting, req.body);
 
-  main.save(function(err) {
+  meeting.save(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(main);
+      res.jsonp(meeting);
     }
   });
 };
 
 /**
- * Delete an Main
+ * Delete an Meeting
  */
 exports.delete = function(req, res) {
-  var main = req.main;
+  var meeting = req.meeting;
 
-  main.remove(function(err) {
+  meeting.remove(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(main);
+      res.jsonp(meeting);
     }
   });
 };
 
 /**
- * List of Mains
+ * List of Meetings
  */
 exports.list = function(req, res) {
-  Main.find().sort('-created').populate('cita', 'displayName').exec(function(err, mains) {
+  Meeting.find().sort('-created').populate('user', 'displayName').exec(function(err, meetings) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(mains);
+      res.jsonp(meetings);
     }
   });
 };
 
 /**
- * Main middleware
+ * Meeting middleware
  */
-exports.mainByID = function(req, res, next, id) {
+exports.meetingByID = function(req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Main is invalid'
+      message: 'Meeting is invalid'
     });
   }
 
-  Main.findById(id).populate('user', 'displayName').exec(function (err, main) {
+  Meeting.findById(id).populate('user', 'displayName').exec(function (err, meeting) {
     if (err) {
       return next(err);
-    } else if (!main) {
+    } else if (!meeting) {
       return res.status(404).send({
-        message: 'No Main with that identifier has been found'
+        message: 'No Meeting with that identifier has been found'
       });
     }
-    req.main = main;
+    req.meeting = meeting;
     next();
   });
 };

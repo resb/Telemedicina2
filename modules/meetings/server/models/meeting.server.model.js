@@ -7,13 +7,13 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Main Schema
+ * Meeting Schema
  */
 var MeetingSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Main name',
+    required: 'Please fill Meeting name',
     trim: true
   },
   created: {
@@ -24,7 +24,7 @@ var MeetingSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  topic: {
+   topic: {
     type: String,
     default: '',
     trim: true
