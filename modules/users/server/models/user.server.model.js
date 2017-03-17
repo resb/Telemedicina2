@@ -97,6 +97,21 @@ var UserSchema = new Schema({
   },
   resetPasswordExpires: {
     type: Date
+  },
+  dni: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  correoZoom: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  contrasenaZoom: {
+    type: String,
+    trim: true,
+    default: '',
   }
 });
 

@@ -15,6 +15,7 @@ var noReturnUrls = [
   '/authentication/signup'
 ];
 
+
 /**
  * Signup
  */
@@ -242,3 +243,4 @@ exports.removeOAuthProvider = function (req, res, next) {
     }
   });
 };
+

@@ -125,7 +125,7 @@
         </div>
                        <div class="form-group" show-errors>
           <label for="lastName">DNI</label>
-          <input type="text" class="form-control" placeholder="DNI" required>
+          <input type="text" id="dni" name="dni" class="form-control" placeholder="DNI"  ng-model="credentials.dni" lowercase required>
         
         </div>
                         <div class="form-group" show-errors>
@@ -145,7 +145,7 @@
             </div>
           </div>
         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                           <div class="col-sm-12">
                             <label class="control-label">Fecha de nacimiento:</label>
                             <div class="form-group">
@@ -173,7 +173,29 @@
                               </div>
                             </div>
                           </div>
+                        </div>-->
+                         <div class="form-group">
+                          <div class="col-sm-12">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox" ng-model="flagCheck"><span style="color:#0f7db9">Cuenta Zoom</span>
+                              </label>
+                            </div>
+                          </div>
                         </div>
+              <div ng-show="flagCheck">
+                <input type="button" class="btn btn-info" ng-click="getbyemail();" value="Validar Correo"></button>
+                <input type="button" class="btn btn-info" ng-click="validateLogin();" value="Validar Login"></button>
+                 <br/><br/>
+                <div class="form-group" show-errors>
+                        <label for="correoZoom">Usuario Zoom</label>
+                        <input type="text" id="correoZoom" name="correoZoom" class="form-control" ng-model="credentials.correoZoom" placeholder="correo"  required>                  
+                      </div> 
+                <div class="form-group" ng-show="emailExist" show-errors>
+                      <label for="contrasenaZoom">Contraseña Zoom</label>
+                      <input type="text" id="contrasenaZoom" name="contrasenaZoom" class="form-control" ng-model="credentials.contrasenaZoom" placeholder="contraseña" required>         
+                    </div>       
+              </div>
                         <div class="form-group">
                           <div class="col-sm-12">
                             <div class="checkbox">
@@ -187,7 +209,7 @@
                           <div class="col-sm-12 text-center">
                             <ul class="list-inline">
                               <li>
-                                <button type="submit" class="btn btn-danger">Aceptar<i class="fa fa-chevron-right"></i></button>
+                                <button type="submit" class="btn btn-danger" ng-disabled="!flagButton">Aceptar<i class="fa fa-chevron-right"></i></button>
                               </li>
                               <li>
                                 <button ui-sref="authentication.signin" class="btn btn-primary">Cancelar<i class="fa fa-chevron-right"></i></button>

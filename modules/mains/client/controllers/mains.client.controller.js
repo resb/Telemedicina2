@@ -18,7 +18,9 @@
     vm.remove = remove;
     vm.save = save;
     vm.fecha = new Date().toJSON().slice(0, 10).replace(new RegExp("-", 'g'), "/").split("/").reverse().join("/");
-
+    vm.login = login;
+    vm.createMeeting = createMeeting;
+     
     // Remove existing Main
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
@@ -50,12 +52,27 @@
         vm.error = res.data.message;
       }
 
-      function prueba(res){
-         setTimeout(function() {
-                     $('#btn_crearMeeting').click();
-                 }, 2000)
-      }
+   
     }
 
+//Zoom meeting
+
+    function login() {
+      Zoom.init("https://www.zoom.us/api/v1");
+                //Remember to put your email and password to login
+      Zoom.login({ email: vm.authentication.user.correoZoom, password: vm.authentication.user.contrasenaZoom }, function (result) {});
+      return false;
+    };
+
+    function createMeeting() {
+            vm.login();
+            Zoom.createMeeting(JSON.parse($('#meetingInfo').val()),
+                       function (result) {
+                        var strURL = "'" + result.start_url + "'";
+                        var win = window.open(result.start_url, "theFrame"); 
+                        $('#meeting_number').val(result.id);                  
+                    });
+            return false;                                           
+    };
   }
 }());

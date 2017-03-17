@@ -81,6 +81,7 @@ exports.delete = function(req, res) {
  * List of Cita
  */
 exports.list = function(req, res) {
+  //{ pacienteDni : req.user.dni}
   Cita.find().sort('-created').populate('user', 'displayName').exec(function(err, cita) {
     if (err) {
       return res.status(400).send({

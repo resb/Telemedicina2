@@ -10,6 +10,12 @@ var mongoose = require('mongoose'),
  * cita Schema
  */
 var CitaSchema = new Schema({
+   pacienteDni: {
+    type: String,
+    default: '',
+    required: 'Please fill dni',
+    trim: true
+  },
   doctor: {
     type: String,
     default: '',
