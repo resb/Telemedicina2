@@ -1,6 +1,7 @@
-<section class="row" ng-controller="DoctorController" data-ng-init="listarMeeting();">
+<section class="row" ng-controller="DoctorController" ng-init="listarMeeting();">
   
 <input type="button" ng-click="getLastMeeting();" id="btn_ultimo" hidden/>
+<input type="button" ng-click="listarMeeting();" id="btn_listar" hidden/>
 <h2>Reunión pendiente</h2>
 <br/>
 <br/>
@@ -8,15 +9,21 @@
     <thead>
       <tr>
         <th>Topic</th>
-        <th>Id Meeting</th>
+        <th>Fecha</th>
+        <th>Paciente</th>
+        <th>DNI</th>
+        <th>Meeting</th>
         <th>Acción</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>{{lastMeeting.topic}} {{lastMeeting.created_at | date: "dd/MM/yyyy 'hora:' h:mma" }}</td>
-        <td>{{lastMeeting.id}}</td>
-        <td style="text-align:center"><input type="button" class="btn btn-success" ng-click="getMeeting(lastMeeting.id)" ng-show="flagEmpezar" value="Empezar Reunión"/>&nbsp;<input type="button" class="btn btn-success" ng-click="endMeeting(lastMeeting.id)" ng-show="flagEmpezar" value="Terminar Reunión"/></td>       
+        <td>{{lastMeeting.topic}}</td>
+        <td>{{lastMeeting.created | date: "dd/MM/yyyy h:mma" }}</td>
+        <td>{{lastMeeting.paciente}}</td>
+        <td>{{lastMeeting.dni}}</td>
+        <td>{{lastMeeting.idMeeting}}</td>
+        <td style="text-align:center"><input type="button" class="btn btn-success" ng-click="getMeeting(lastMeeting.idMeeting)" ng-show="flagEmpezar" value="Empezar"/>&nbsp;<input type="button" class="btn btn-success" ng-click="endMeeting(lastMeeting)" ng-show="flagEmpezar" value="Terminar"/></td>       
       </tr>    
     </tbody>
   </table>

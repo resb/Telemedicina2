@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('DoctorController', ['$scope', '$http', 'Authentication', '$filter', 'toastr',
-  function ($scope, $http, Authentication, $filter, toastr) {
+angular.module('users').controller('DoctorController', ['Meeting','$scope', '$state', '$window', '$http', 'Authentication', '$filter', 'toastr',
+  function (Meeting, $scope, $state, $window, $http, Authentication, $filter, toastr) {
     $scope.user = Authentication.user;
     $scope.meeting = {};
     $scope.idMeeting = null;
@@ -16,21 +16,41 @@ angular.module('users').controller('DoctorController', ['$scope', '$http', 'Auth
     if(!$scope.flag){
     $scope.login();
     }
-    setTimeout(function() {
-            Zoom.listMeeting({ page_size: 100, page_number: 1 }, function (result) {
-                $scope.formatMeeting = $filter('orderBy')(result.meetings, '-created_at');
-                //console.log($filter('orderBy')(result.meetings, '-created_at'));
-                //$scope.meeting = result.meetings;
-                $scope.flag = true;
-            });                                
-            return false;
-             }, 1000);
-      setTimeout(function() {
-          $('#btn_ultimo').click();
-           }, 2000);
-}
 
+    $scope.meeting = Meeting.query(function (res){
+        $scope.formatMeeting = $filter('orderBy')(res, '-created');  
+        $scope.flag = true;     
+    });
+     setTimeout(function() {
+           $('#btn_ultimo').click();
+           if($scope.formatMeeting.length < 1){
+               $scope.flagEmpezar = false; 
+           }
+     }, 200);
+    // setTimeout(function() {
+    //         Zoom.listMeeting({ page_size: 100, page_number: 1 }, function (result) {
+    //             $scope.formatMeeting = $filter('orderBy')(result.meetings, '-created_at');
+    //             //console.log($filter('orderBy')(result.meetings, '-created_at'));
+    //             //$scope.meeting = result.meetings;
+    //             $scope.flag = true;
+    //         });                                
+    //         return false;
+    //          }, 1000);
+    //   setTimeout(function() {
+    //       $('#btn_ultimo').click();
+    //        }, 2000);
+}
     
+   $scope.remove = function(meeting){
+      if ($window.confirm('Are you sure you want to delete?')) {
+        meeting.$remove($state.go('settings.doctor'));
+         setTimeout(function() {
+             $scope.lastMeeting = {};
+               $('#btn_listar').click();
+                 }, 200) ;         
+          return false;	
+      }
+    }
 
     $scope.login = function() {
       Zoom.init("https://www.zoom.us/api/v1");
@@ -55,24 +75,21 @@ angular.module('users').controller('DoctorController', ['$scope', '$http', 'Auth
     $scope.getMeeting = function(meetingId){
         Zoom.getMeeting({ meeting_number: meetingId},
         function (result) {
-        var win = window.open(result.join_url, "theFrame");                  
+        var win = window.open(result.join_url, "theFrame");              
         //$('#jsonMst').html(result.start_url);
         //$('#jsonMst').html("<a href='" + result.join_url + "' id='btnIniciar'>Iniciar Reuni&#243n (adm)</a>");                      
      });
         return false;
     }  
 
-    $scope.endMeeting = function(idmeeting) {
-      Zoom.endMeeting({ meeting_number: idmeeting },
+    $scope.endMeeting = function(meeting) {
+      Zoom.endMeeting({ meeting_number: meeting.idMeeting },
                 function (result) {
                     $('#api_title').html("End Meeting");              
                 });
-      $scope.borrarMeeting(idmeeting);           
-      $scope.listarMeeting();  
-      setTimeout(function() {
-               $('#btn_ultimo').click();
-                 }, 2000)           
-          return false;		
+      $scope.borrarMeeting(meeting.idMeeting);             
+      $scope.remove(meeting);
+ 	
 	};
 
      $scope.borrarMeeting = function(idmeeting) { 

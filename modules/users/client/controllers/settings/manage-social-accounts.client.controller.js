@@ -54,7 +54,7 @@ angular.module('users').controller('SocialAccountsController', ['$scope', '$http
     $scope.login = function() {
       Zoom.init("https://www.zoom.us/api/v1");
                 //Remember to put your email and password to login
-            Zoom.login({ email: "msouga@gmail.com", password: "Pablito12@Zoom" }, function (result) {
+            Zoom.login({ email: $scope.user.correoZoom, password: $scope.user.contrasenaZoom }, function (result) {
                     $('#btn_login').val("login completado");
                 });
 

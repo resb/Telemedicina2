@@ -10,12 +10,6 @@ var mongoose = require('mongoose'),
  * Meeting Schema
  */
 var MeetingSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Meeting name',
-    trim: true
-  },
   created: {
     type: Date,
     default: Date.now
@@ -33,7 +27,17 @@ var MeetingSchema = new Schema({
     type: String,
     default: '',
     trim: true
-  }
+  },
+    paciente: {
+      type: String,
+      default: '',
+      trim: true
+    },
+    dni: {
+      type: String,
+      default: '',
+      trim: true
+    }
 });
 
 mongoose.model('Meeting', MeetingSchema);

@@ -23,7 +23,9 @@
 
     // Save Meeting
     function save() {
-
+      vm.meeting.topic = "Reunión Emergencia"
+      vm.meeting.paciente = vm.authentication.user.displayName;
+      vm.meeting.dni = vm.authentication.user.dni;
       vm.meeting.$save(successCallback, errorCallback);
 
       function successCallback(res) {
@@ -50,9 +52,11 @@
                        function (result) {
                         var strURL = "'" + result.start_url + "'";
                         var win = window.open(result.start_url, "theFrame"); 
-                        $('#meeting_number').val(result.id);
-                        vm.save();
-                    });
+                        vm.meeting.idMeeting = result.id;
+                        setTimeout(function() {
+                        save();
+                        }, 1000)                        
+                    });            
             return false;                                           
     };
   }

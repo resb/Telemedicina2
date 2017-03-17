@@ -23,3 +23,15 @@ angular.module('users.admin').factory('Admin', ['$resource',
     });
   }
 ]);
+
+angular.module('users').factory('Meeting', ['$resource',
+  function ($resource) {
+    return $resource('api/users/doctor/:meetingId', {
+      meetingId: '@_id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
+  }
+]);
