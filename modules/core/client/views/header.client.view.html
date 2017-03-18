@@ -9,7 +9,7 @@
     <a ui-sref="home" class="navbar-brand" style="padding-top: 0px"><img src="/modules/core/client/img/brand/health.png"></img></a>
     <a class="navbar-brand title-web" href="#">Centro virtual de atención médica</a>
   </div>
-  <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation" style="padding-top: 25px">
+  <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation" style="padding-top: 25px; padding-left: 75%">
     <ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
       <li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">
         <a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>

@@ -1,4 +1,5 @@
 <section>
+   <div class="container">
   <div class="page-header">
     <div class="row">
       <div class="col-md-6">
@@ -39,7 +40,7 @@
       <hr/>
       <div class="row">
         <div class="col-md-3"><strong>Created</strong></div>
-        <div class="col-md-6" ng-bind="user.created"></div>
+        <div class="col-md-6" ng-bind="user.created | date : 'dd/MM/yyyy h:mma'"></div>
       </div>
       <hr/>
       <div class="row">
@@ -47,5 +48,6 @@
         <div class="col-md-6" ng-bind="user.roles"></div>
       </div>
     </div>
+  </div>
   </div>
 </section>
