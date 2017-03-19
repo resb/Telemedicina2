@@ -32,7 +32,7 @@
           meetingResolve: newMeeting
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Meetings Create'
         }
       })
@@ -45,7 +45,7 @@
           meetingResolve: getMeeting
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Edit Meeting {{ meetingResolve.name }}'
         }
       })

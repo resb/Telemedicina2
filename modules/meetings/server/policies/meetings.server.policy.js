@@ -31,6 +31,16 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }]
   }, {
+    roles: ['doctor'],
+    allows: [{
+      resources: '/api/meetings',
+      permissions: ['get', 'post']
+    }, {
+      resources: '/api/meetings/:meetingId',
+      permissions: ['get']
+    }]
+  }
+  , {
     roles: ['guest'],
     allows: [{
       resources: '/api/meetings',

@@ -16,12 +16,12 @@
           <a ui-sref="settings.password">Change Password</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="settings.accounts">Meetings</a>
+          <a ui-sref="settings.accounts">Manage Meetings</a>
         </li>
-         <li ui-sref-active="active">
+         <li ui-sref-active="active" ng-hide="(user.roles == 'user') ? true : false">
           <a ui-sref="settings.doctor">Doctor</a>
         </li>
-         <li ui-sref-active="active">
+         <li ui-sref-active="active" ng-hide="(user.roles == 'user') ? true : false">
           <a ui-sref="cita.listCita">Citas</a>
         </li>
       </ul>

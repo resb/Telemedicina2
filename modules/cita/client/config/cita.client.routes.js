@@ -14,7 +14,7 @@
         url: '/cita',
         templateUrl: 'modules/users/client/views/settings/settings.client.view.html',
         data: {
-          roles: ['user', 'admin']
+          roles: ['admin', 'doctor']
         }
       })
       .state('cita.listCita', {
@@ -35,7 +35,7 @@
           citaResolve: newCita
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin', 'doctor'],
           pageTitle: 'Cita Create'
         }
       })
@@ -48,7 +48,7 @@
           citaResolve: getCita
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['admin', 'doctor'],
           pageTitle: 'Edit Cita {{ citaResolve.name }}'
         }
       })
