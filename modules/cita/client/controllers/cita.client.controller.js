@@ -6,9 +6,9 @@
     .module('cita')
     .controller('CitaController', CitaController);
 
-  CitaController.$inject = ['$scope', '$state', '$window', 'Authentication', 'citaResolve'];
+  CitaController.$inject = ['$scope', '$state', '$window', 'Authentication', 'citaResolve', 'SpecialtiesService'];
 
-  function CitaController ($scope, $state, $window, Authentication, cita) {
+  function CitaController ($scope, $state, $window, Authentication, cita, SpecialtiesService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -17,6 +17,9 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.specialties = SpecialtiesService.query();
+    vm.specialtieSelect = vm.specialties[0];
+    //vm.cita.doctor = vm.authentication.user.displayName;
 
     // Remove existing Cita
     function remove() {

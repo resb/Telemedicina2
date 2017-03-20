@@ -70,7 +70,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Emergencia'
         }
       })
@@ -83,7 +83,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -96,7 +96,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Informacion'
         }
       })
@@ -109,7 +109,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -122,7 +122,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -133,7 +133,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -144,7 +144,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -155,7 +155,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -166,7 +166,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -177,7 +177,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -188,7 +188,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -199,7 +199,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -210,7 +210,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -221,7 +221,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
@@ -232,7 +232,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user', 'admin', 'doctor'],
           pageTitle: 'Mis Citas Vituales'
         }
       });
