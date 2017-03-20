@@ -22,7 +22,9 @@ module.exports = {
         'public/lib/jquery/dist/jquery.js',
         'public/lib/angular-toastr/dist/angular-toastr.tpls.js',
         'public/lib/moment/min/moment-with-locales.js',
-        'public/lib/angular-moment-picker/dist/angular-moment-picker.min.js'
+        'public/lib/angular-moment-picker/dist/angular-moment-picker.min.js',
+        //'http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.min.js',
+        'https://rawgithub.com/randallmeeker/ps-input-time/master/ps-input-time.js'
 
 
       ],

@@ -30,11 +30,9 @@ var CitaSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  especialidad: {
-    type: String,
-    default: '',
-    required: 'Please fill Especialidad name',
-    trim: true
+  specialty: {
+    type: Schema.ObjectId,
+    ref: 'Specialty'
   },
   fecha: {
     type: Date,

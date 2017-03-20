@@ -18,7 +18,7 @@
     <tbody>
       <tr ng-repeat="cita in vm.cita | orderBy : 'fecha'">
         <td>{{cita.doctor}}</td>
-        <td style="text-align:center">{{cita.especialidad}}</td>
+        <td style="text-align:center">{{cita.specialty.name}}</td>
         <td style="text-align:center">{{cita.fecha | date:'dd/MM/yyyy'}}</td>
         <td style="text-align:center">{{cita.fecha | date:'HH:mm'}}</td>
         <td style="text-align:center"><a class="btn btn-primary"

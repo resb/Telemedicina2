@@ -71,7 +71,6 @@ angular.module('users').controller('DoctorController', ['Meeting','$scope', '$st
         }            
     }
 
-
     $scope.getMeeting = function(meetingId){
         Zoom.getMeeting({ meeting_number: meetingId},
         function (result) {

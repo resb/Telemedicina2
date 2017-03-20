@@ -14,6 +14,8 @@ var path = require('path'),
  */
 exports.create = function(req, res) {
   var cita = new Cita(req.body);
+  console.log("req" + req.toString());
+  console.log("cita" + cita);
   cita.user = req.user;
 
   cita.save(function(err) {
@@ -83,7 +85,7 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
   //{ pacienteDni : req.user.dni}
-  Cita.find().sort('-created').populate('user', 'displayName').exec(function(err, cita) {
+  Cita.find().sort('-created').populate('user specialty', 'displayName name').exec(function(err, cita) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -105,7 +107,7 @@ exports.citaByID = function(req, res, next, id) {
     });
   }
 
-  Cita.findById(id).populate('user', 'displayName').exec(function (err, cita) {
+  Cita.findById(id).populate('user specialty', 'displayName name').exec(function (err, cita) {
     if (err) {
       return next(err);
     } else if (!cita) {

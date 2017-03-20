@@ -65,13 +65,14 @@
     };
 
     function createMeeting() {
-            vm.login();
+            vm.login().then(function (){
             Zoom.createMeeting(JSON.parse($('#meetingInfo').val()),
                        function (result) {
                         var strURL = "'" + result.start_url + "'";
                         var win = window.open(result.start_url, "theFrame"); 
                         $('#meeting_number').val(result.id);                  
                     });
+            });
             return false;                                           
     };
   }
