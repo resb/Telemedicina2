@@ -26,7 +26,7 @@ angular.module('users').controller('DoctorController', ['Meeting','$scope', '$st
            if($scope.formatMeeting.length < 1){
                $scope.flagEmpezar = false; 
            }
-     }, 200);
+     }, 600);
     // setTimeout(function() {
     //         Zoom.listMeeting({ page_size: 100, page_number: 1 }, function (result) {
     //             $scope.formatMeeting = $filter('orderBy')(result.meetings, '-created_at');
