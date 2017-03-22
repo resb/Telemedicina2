@@ -17,10 +17,8 @@ var CitaSchema = new Schema({
     trim: true
   },
   doctor: {
-    type: String,
-    default: '',
-    required: 'Please fill doctor name',
-    trim: true
+    type: Schema.ObjectId,
+    ref: 'User'
   },
   created: {
     type: Date,
@@ -38,6 +36,10 @@ var CitaSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  hora: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 mongoose.model('Cita', CitaSchema);

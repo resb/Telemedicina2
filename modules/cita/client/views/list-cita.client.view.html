@@ -17,10 +17,10 @@
     </thead>
     <tbody>
       <tr ng-repeat="cita in vm.cita | orderBy : 'fecha'">
-        <td>{{cita.doctor}}</td>
+        <td>{{cita.doctor.displayName}}</td>
         <td style="text-align:center">{{cita.specialty.name}}</td>
         <td style="text-align:center">{{cita.fecha | date:'dd/MM/yyyy'}}</td>
-        <td style="text-align:center">{{cita.fecha | date:'HH:mm'}}</td>
+        <td style="text-align:center">{{cita.hora | date:'h:mma'}}</td>
         <td style="text-align:center"><a class="btn btn-primary"
        ui-sref="cita.edit({ citaId: cita._id })">
       <i class="glyphicon glyphicon-edit"></i>

@@ -48,6 +48,7 @@
 
     function createMeeting() {
             vm.login();
+            setTimeout(function() {
             Zoom.createMeeting(JSON.parse($('#meetingInfo').val()),
                        function (result) {
                         var strURL = "'" + result.start_url + "'";
@@ -55,8 +56,9 @@
                         vm.meeting.idMeeting = result.id;
                         setTimeout(function() {
                         save();
-                        }, 1000)                        
-                    });            
+                        }, 500)                        
+                    });  
+            },500);          
             return false;                                           
     };
   }

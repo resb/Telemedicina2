@@ -21,7 +21,8 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/jquery/dist/jquery.js',
         'public/lib/angular-toastr/dist/angular-toastr.tpls.js',
-        'public/lib/moment/min/moment-with-locales.js'       
+        'public/lib/moment/min/moment-with-locales.js',
+        //'http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js'
 
 
       ],
