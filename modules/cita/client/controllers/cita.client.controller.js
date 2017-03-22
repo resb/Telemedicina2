@@ -13,6 +13,7 @@
 
     vm.authentication = Authentication;
     vm.cita = cita;
+    vm.cita.fecha = new Date(vm.cita.fecha);
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
