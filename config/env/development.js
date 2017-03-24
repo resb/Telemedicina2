@@ -66,6 +66,7 @@ module.exports = {
     callbackURL: '/api/auth/paypal/callback',
     sandbox: true
   },
+  //Credenciales para mandar correo, cambiar MAILER_FROM(ejem: demo@gmail.com), MAILER_SERVICE_PROVIDER(ejem: gmail), MAILER_EMAIL_ID(ejem: demo@gmail.com), MAILER_PASSWORD(eje: clave)
   mailer: {
     from: process.env.MAILER_FROM || 'MAILER_FROM',
     options: {
