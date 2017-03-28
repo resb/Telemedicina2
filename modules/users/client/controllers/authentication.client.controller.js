@@ -69,8 +69,11 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
     };
 
     $scope.getbyemail = function(){
-      var zoom_key = '_6AlG_L7QRayLYrF4jc0Aw';
-      var zoom_sec = 'd00ZS5m2YCy9HYrmr1nmW7SUREzu1sjYlTo8';    
+      /*Las credenciales de la cuenta zoom vences en 60 dias (free-trial)*/
+      //var zoom_key = '_6AlG_L7QRayLYrF4jc0Aw'; <---- msouga@gmail.com
+      //var zoom_sec = 'd00ZS5m2YCy9HYrmr1nmW7SUREzu1sjYlTo8'; <--- msouga@gmail.com
+      var zoom_key = '9tWwl770TMaxKYabrrO7cQ'; // davidbulnes19@hotmail.com
+      var zoom_sec = 'fhyI8Hcgf90QDiVEowwdPmTbnajLnCdUaL6p'; // davidbulnes19@hotmail.com
     
       $http.post('https://api.zoom.us/v1/user/checkemail?api_key=' + zoom_key + '&api_secret=' + zoom_sec+ '&data_type="JSON"&email=' + $scope.credentials.correoZoom).success(function (response) {
         console.log(response);
