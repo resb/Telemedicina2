@@ -1,4 +1,4 @@
-<section class="row" ng-controller="EditProfileController">
+<section>
     <main id="main-section">
       <nav class="open" id="main-menu" style="padding-top: 15px">
         <ul>
@@ -20,6 +20,7 @@
             <ol class="breadcrumb">
               <li><a ui-sref="home">Inicio</a></li>
               <li><span>Registrar tarjeta</span></li>
+             
             </ol>
           </div>
           <div id="content">
@@ -35,12 +36,12 @@
                 <div class="col-sm-8 col-sm-offset-2">
                   <h2 class="title"><img src="/modules/mains/client/img/TelHealth_51.png"><span>ELEGIR MEDIOS DE PAGO</span></h2>
                   <figure><img src="/modules/mains/client/img/TelHealth_54.png"></figure>
-                  <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" class="signin" novalidate autocomplete="off">
+                  <form name="vm.form.tarjetaForm" class="form-horizontal" ng-submit="vm.save(vm.form.tarjetaForm.$valid)" novalidate>
                   <div class="form-horizontal">
                     <div class="form-group">
                       <div class="col-sm-5">
                         <label class="control-label">Seleccionar tarjeta:</label>
-                        <select class="form-control" ng-model="user.tarjeta[0].nombre">
+                        <select class="form-control" ng-model="vm.tarjeta.nombre">
                               <option value="Visa">Visa</option>
                               <option value="MasterCard">Mastercard</option>
                               <option value="Discover">Discover</option>
@@ -48,22 +49,22 @@
                       </div>
                       <div class="col-sm-7">
                         <label class="control-label">Número de tarjeta</label>
-                        <input class="form-control" ng-model="user.tarjeta[0].nrotarjeta">
+                        <input class="form-control" ng-model="vm.tarjeta.nrotarjeta">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-sm-4">
                         <label class="control-label">Codigo de seguridad:</label>
-                        <input class="form-control" ng-model="user.tarjeta[0].codseguridad">
+                        <input class="form-control" ng-model="vm.tarjeta.codseguridad">
                       </div>
                       <div class="col-sm-6 col-sm-offset-1">
                         <label class="control-label">Fecha de expiración</label>
                         <div class="form-group">
                           <div class="col-sm-5">
-                            <input class="form-control" ng-model="user.tarjeta[0].mesexpiracion">
+                            <input class="form-control" ng-model="vm.tarjeta.mesexpiracion">
                           </div>
                           <div class="col-sm-7">
-                            <select class="form-control" id="year" ng-model="user.tarjeta[0].anioexpiracion"> 
+                            <select class="form-control" id="year" ng-model="vm.tarjeta.anioexpiracion"> 
                                   <script>
                                     var currentTime = new Date();
                                     var year = currentTime.getFullYear();
@@ -85,9 +86,9 @@
                     </div>
                   
                   </div> <div class="text-center">
-                      <div class="form-group">
-                          <input type="submit" value="Update" class="btn btn-info" ui-sref="mains.informacion">
-                        </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-info">{{vm.tarjeta._id ? 'Update' : 'Create'}}</button>
+                    </div>
                    <!-- <button class="btn btn-danger" data-toggle="modal" data-target="#modal-actualizar-informacion">Agregar tarjeta<i class="fa fa-chevron-right"></i></button>-->
                   </div>
                 </form>
@@ -98,4 +99,4 @@
         </div>
       </div>
     </main>
-    </section>
+  </section>    

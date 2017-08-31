@@ -19,7 +19,7 @@
              message:errorHandler.getErrorMessage(err)
          });
      }else{
-        res.jsonp(specialty);
+        res.jsonp(tarjeta);
      }
       });
  };

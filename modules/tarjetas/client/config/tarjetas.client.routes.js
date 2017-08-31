@@ -25,7 +25,7 @@
         })
         .state('tarjetas.create', {
           url: '/create',
-          templateUrl: 'modules/tarjetas/client/views/form-tarjeta.client.view.html',
+          templateUrl: 'modules/mains/client/views/form-tarjeta.client.view.html',
           controller: 'TarjetasController',
           controllerAs: 'vm',
           resolve: {

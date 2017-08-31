@@ -1,14 +1,14 @@
 (function () {
     'use strict';
   
-    // Specialties controller
+    // Tarjetas controller
     angular
-      .module('specialties')
-      .controller('SpecialtiesController', SpecialtiesController);
+      .module('tarjetas')
+      .controller('TarjetasController', TarjetasController);
   
     TarjetasController.$inject = ['$scope', '$state', '$window', 'Authentication', 'tarjetaResolve'];
   
-    function TarjetasController ($scope, $state, $window, Authentication, specialty) {
+    function TarjetasController ($scope, $state, $window, Authentication, tarjeta) {
       var vm = this;
   
       vm.authentication = Authentication;

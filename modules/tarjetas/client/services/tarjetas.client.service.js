@@ -4,7 +4,7 @@
   
     angular
       .module('tarjetas')
-      .factory('TarjetasService', SpecialtiesService);
+      .factory('TarjetasService', TarjetasService);
   
     TarjetasService.$inject = ['$resource'];
   

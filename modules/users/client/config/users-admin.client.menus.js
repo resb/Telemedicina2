@@ -11,5 +11,9 @@ angular.module('users.admin').run(['Menus',
       title: 'Manage Specialties',
       state: 'specialties.list'
     });
+    Menus.addSubMenuItem('topbar', 'admin', {
+      title: 'Manage Tarjetas',
+      state: 'tarjetas.list'
+    });
   }
 ]);

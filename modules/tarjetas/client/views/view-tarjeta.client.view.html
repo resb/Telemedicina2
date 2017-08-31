@@ -1,7 +1,7 @@
 <section>
         <div class="container">
         <div class="page-header">
-          <h1 ng-bind="vm.tarjeta.name"></h1>
+          <h1 ng-bind="vm.tarjeta.nombre"></h1>
         </div>
         <div class="pull-right"
              ng-show="vm.tarjeta.isCurrentUserOwner">
@@ -16,13 +16,13 @@
         <small>
           <em class="text-muted">
             Created on
-            <span ng-bind="vm.tarjeta.created | date:'mediumDate'"></span>
+            <span ng-bind="vm.tarjeta.nombre "></span>
             by
             <span ng-if="vm.tarjeta.user"
                   ng-bind="vm.tarjeta.user.displayName"></span>
             <span ng-if="!vm.tarjeta.user">Deleted User</span>
           </em>
         </small>
-        <p class="lead" ng-bind="vm.tarjeta.content"></p>
+       <!-- <p class="lead" ng-bind="vm.tarjeta.nombre"></p>-->
         </div>
       </section>
