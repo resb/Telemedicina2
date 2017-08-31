@@ -1,0 +1,26 @@
+<section>
+  <div class="container">
+  <div class="page-header">
+    <h1>{{vm.specialty._id ? 'Edit Specialty' : 'New Specialty'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.specialtyForm" class="form-horizontal" ng-submit="vm.save(vm.form.specialtyForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.specialty.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.specialtyForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Specialty name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-info">{{vm.specialty._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  </div>
+</section>
