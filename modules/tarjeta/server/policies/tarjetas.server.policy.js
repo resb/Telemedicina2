@@ -9,47 +9,47 @@ var acl = require('acl');
 acl = new acl(new acl.memoryBackend());
 
 /**
- * Invoke Specialties Permissions
+ * Invoke tarjetas Permissions
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/specialties',
+      resources: '/api/tarjetas',
       permissions: '*'
     }, {
-      resources: '/api/specialties/:specialtyId',
+      resources: '/api/tarjetas/:tarjetaId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/specialties',
+      resources: '/api/tarjetas',
       permissions: ['get', 'post']
     }, {
-      resources: '/api/specialties/:specialtyId',
+      resources: '/api/tarjetas/:tarjetaId',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/specialties',
+      resources: '/api/tarjetas',
       permissions: ['get']
     }, {
-      resources: '/api/specialties/:specialtyId',
+      resources: '/api/tarjetas/:tarjetaId',
       permissions: ['get']
     }]
   }]);
 };
 
 /**
- * Check If Specialties Policy Allows
+ * Check If tarjetas Policy Allows
  */
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
   // If an Specialty is being processed and the current user created it then allow any manipulation
-  if (req.specialty && req.user && req.specialty.user && req.specialty.user.id === req.user.id) {
+  if (req.tarjeta && req.user && req.tarjeta.user && req.tarjeta.user.id === req.user.id) {
     return next();
   }
 
