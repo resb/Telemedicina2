@@ -2,9 +2,9 @@
         <div class="container">
         <div class="page-header">
           <h1 ng-bind="vm.tarjeta.nombre"></h1>
+          <span>nro de tarjeta:&nbsp;</span><span ng-bind="vm.tarjeta.nrotarjeta"></span>
         </div>
-        <div class="pull-right"
-             ng-show="vm.tarjeta.isCurrentUserOwner">
+        <div class="pull-right">
           <a class="btn btn-primary"
              ui-sref="tarjetas.edit({ tarjetaId: vm.tarjeta._id })">
             <i class="glyphicon glyphicon-edit"></i>

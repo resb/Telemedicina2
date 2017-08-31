@@ -1,5 +1,5 @@
 <section>
-    <div class="container">
+  <div class="container">
     <div class="page-header">
       <h1>{{vm.tarjeta._id ? 'Edit Tarjeta' : 'New Tarjeta'}}</h1>
     </div>
@@ -7,12 +7,45 @@
       <form name="vm.form.tarjetaForm" class="form-horizontal" ng-submit="vm.save(vm.form.tarjetaForm.$valid)" novalidate>
         <fieldset>
           <div class="form-group" show-errors>
-            <label class="control-label" for="name">Name</label>
-            <input name="name" type="text" ng-model="vm.tarjeta.name" id="name" class="form-control" placeholder="Name" required>
+            <label class="control-label" for="name">Tarjeta</label>
+            <input name="name" type="text" ng-model="vm.tarjeta.nombre" id="name" class="form-control" placeholder="Name" required>
             <div ng-messages="vm.form.tarjetaForm.name.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Tarjeta name is required.</p>
             </div>
           </div>
+          <hr/>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="name">Número de Tarjeta</label>
+            <input name="name" type="text" ng-model="vm.tarjeta.nrotarjeta" id="name" class="form-control" placeholder="Name" required>
+            <div ng-messages="vm.form.tarjetaForm.name.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Tarjeta name is required.</p>
+            </div>
+          </div>
+          <hr/>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="name">Código de seguridad</label>
+            <input name="name" type="text" ng-model="vm.tarjeta.codseguridad" id="name" class="form-control" placeholder="Name" required>
+            <div ng-messages="vm.form.tarjetaForm.name.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Tarjeta name is required.</p>
+            </div>
+          </div>
+          <hr/>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="name">Mes de Expiración</label>
+            <input name="name" type="text" ng-model="vm.tarjeta.mesexpiracion" id="name" class="form-control" placeholder="Name" required>
+            <div ng-messages="vm.form.tarjetaForm.name.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Tarjeta name is required.</p>
+            </div>
+          </div>
+          <hr/>
+          <div class="form-group" show-errors>
+            <label class="control-label" for="name">Año de expiración</label>
+            <input name="name" type="text" ng-model="vm.tarjeta.anioexpiracion" id="name" class="form-control" placeholder="Name" required>
+            <div ng-messages="vm.form.tarjetaForm.name.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Tarjeta name is required.</p>
+            </div>
+          </div>
+          <hr/>
           <div class="form-group">
             <button type="submit" class="btn btn-info">{{vm.tarjeta._id ? 'Update' : 'Create'}}</button>
           </div>
@@ -22,6 +55,5 @@
         </fieldset>
       </form>
     </div>
-    </div>
-  </section>
-  
+  </div>
+</section>

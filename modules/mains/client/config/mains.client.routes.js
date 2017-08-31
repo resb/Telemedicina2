@@ -133,7 +133,7 @@
           mainResolve: newMain
         },
         data: {
-          roles: ['user', 'admin', 'doctor'],
+          roles: ['user', 'admin'],
           pageTitle: 'Mis Citas Vituales'
         }
       })
