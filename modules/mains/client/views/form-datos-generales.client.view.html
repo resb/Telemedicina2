@@ -1,55 +1,53 @@
-    <main id="main-section">     
-      <nav class="open" id="main-menu" style="padding-top: 15px">
-        <ul>
-          <li class="header text-center">MENÚ</li>
-          <li class="active"><a ui-sref="mains.iformacion"><img src="/modules/mains/client/img/TelHealth_14.png"><span>Datos generales</span></a></li>
-          <li><a ui-sref="mains.tarjeta"><img src="/modules/mains/client/img/TelHealth_27.png"><span>Registrar Tarjeta</span></a></li>
-          <li><a ui-sref="mains.alergia"><img src="/modules/mains/client/img/TelHealth_33.png"><span>Alergias</span></a></li>
-          <li><a ui-sref="mains.habitos"><img src="/modules/mains/client/img/TelHealth_35.png"><span>Hábitos</span></a></li>
-          <li><a ui-sref="mains.enfermedades"><img src="/modules/mains/client/img/TelHealth_37.png"><span>Enfermedades Pre existentes</span></a></li>
-          <li><a ui-sref="mains.tratamientos"><img src="/modules/mains/client/img/TelHealth_39.png"><span>Tratamientos actuales</span></a></li>
-          <li><a ui-sref="mains.operaciones"><img src="/modules/mains/client/img/TelHealth_41.png"><span>Operaciones realizadas</span></a></li>
-          <li><a ui-sref="mains.historial"><img src="/modules/mains/client/img/TelHealth_43.png"><span>Historia familiar</span></a></li>
-        </ul>
-      </nav>
-      <div id="content-box">
-        <br/>
-        <div class="container-fluid">
-          <div id="breadcrumb">
-            <ol class="breadcrumb">
-              <li><a ui-sref="home">Inicio</a></li>
-              <li><span>Datos generales</span></li>
-            </ol>
-          </div>
-          <div id="content">
-            <div id="informacion-alergias">
-              <div class="text-center">
-                <ul class="list-inline" id="list-links">
-                  <li><a ui-sref="mains.emergencia"><img src="/modules/mains/client/img/TelHealth_18.png"><span>EMERGENCIAS</span></a></li>
-                  <li><a ui-sref="mains.citas"><img src="/modules/mains/client/img/TelHealth_20.png"><span>MIS CITAS VIRTUALES</span></a></li>
-                  <li class="active"><a ui-sref="mains.informacion"><img src="/modules/mains/client/img/TelHealth_22.png"><span>MI INFORMACIÓN</span></a></li>
-                </ul>
+<main id="main-section">     
+    <nav class="open" id="main-menu" style="padding-top: 15px">
+      <ul>
+        <li class="header text-center">MENÚ</li>
+        <li class="active"><a ui-sref="mains.informacion"><img src="/modules/mains/client/img/TelHealth_14.png"><span>Datos generales</span></a></li>
+        <li><a ui-sref="mains.tarjeta"><img src="/modules/mains/client/img/TelHealth_27.png"><span>Registrar Tarjeta</span></a></li>
+        <li><a ui-sref="mains.alergia"><img src="/modules/mains/client/img/TelHealth_33.png"><span>Alergias</span></a></li>
+        <li><a ui-sref="mains.habitos"><img src="/modules/mains/client/img/TelHealth_35.png"><span>Hábitos</span></a></li>
+        <li><a ui-sref="mains.enfermedades"><img src="/modules/mains/client/img/TelHealth_37.png"><span>Enfermedades Pre existentes</span></a></li>
+        <li><a ui-sref="mains.tratamientos"><img src="/modules/mains/client/img/TelHealth_39.png"><span>Tratamientos actuales</span></a></li>
+        <li><a ui-sref="mains.operaciones"><img src="/modules/mains/client/img/TelHealth_41.png"><span>Operaciones realizadas</span></a></li>
+        <li><a ui-sref="mains.historial"><img src="/modules/mains/client/img/TelHealth_43.png"><span>Historia familiar</span></a></li>
+      </ul>
+    </nav>
+    <div id="content-box">
+      <br/>
+      <div class="container-fluid">
+        <div id="breadcrumb">
+          <ol class="breadcrumb">
+            <li><a ui-sref="home">Inicio</a></li>
+            <li><span>Datos generales</span></li>
+          </ol>
+        </div>
+        <div id="content">
+          <div id="informacion-alergias">
+            <div class="text-center">
+              <ul class="list-inline" id="list-links">
+                <li><a ui-sref="mains.emergencia"><img src="/modules/mains/client/img/TelHealth_18.png"><span>EMERGENCIAS</span></a></li>
+                <li><a ui-sref="mains.citas"><img src="/modules/mains/client/img/TelHealth_20.png"><span>MIS CITAS VIRTUALES</span></a></li>
+                <li class="active"><a ui-sref="mains.informacion"><img src="/modules/mains/client/img/TelHealth_22.png"><span>MI INFORMACIÓN</span></a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <figure><img ng-src="{{vm.authentication.user.profileImageURL}}" style="margin-top:25px; height: 211px; width: 168px"></figure>
               </div>
-              <div class="row">
-                <div class="col-sm-3">
-                  <figure><img ng-src="{{vm.authentication.user.profileImageURL}}" style="margin-top:25px; height: 211px; width: 168px"></figure>
-                </div>
-                <div class="col-sm-9">
-                  <h2 class="title"><img src="/modules/mains/client/img/TelHealth_47.png"><span>DATOS GENERALES</span></h2>
-                  <ul>
-                    <li><strong>Nombre:</strong>Seminario Lopez</li>
-                    <li><strong>Fecha de nacimiento:</strong>14 de Julio de 1982</li>
-                    <li><strong>Sexo:</strong>Masculino</li>
-                    <li><strong>Estatura:</strong>1.77 mt</li>
-                    <li><strong>Peso</strong>78 kg</li>
-                  </ul>
-                  <div class="text-right">
-                    <button class="btn btn-danger">Editar perfil<i class="fa fa-chevron-right"></i></button>
-                  </div>
-                </div>
+              <div class="col-sm-9">
+                <h2 class="title"><img src="/modules/mains/client/img/TelHealth_47.png"><span>DATOS GENERALES</span></h2>
+                <ul>
+                  <li><strong>Nombre:</strong><strong ng-bind="' ' + vm.authentication.user.firstName + ' ' + vm.authentication.user.lastName"></strong></li>
+                  <li><strong>Fecha de Nacimiento:&nbsp;</strong><strong ng-bind="vm.authentication.user.fecnac | date:'dd/MM/yyyy'"></strong></li>
+                  <li><strong>Sexo:</strong><strong ng-bind="' ' + vm.authentication.user.sexo"></strong></li>
+                  <li><strong>Estatura:</strong><strong ng-bind="' ' + vm.authentication.user.altura"></strong></li>
+                  <li><strong>Peso:</strong><strong ng-bind="' ' + vm.authentication.user.peso"></strong></li>
+                </ul>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>

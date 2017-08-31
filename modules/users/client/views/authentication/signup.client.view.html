@@ -87,14 +87,14 @@
                               <li>
                                 <div class="checkbox">
                                   <label>
-                                    <input type="radio">Masculino
+                                    <input type="radio" ng-model="credentials.sexo" value="Masculino">Masculino
                                   </label>
                                 </div>
                               </li>
                               <li>
                                 <div class="checkbox">
                                   <label>
-                                    <input type="radio">Femenino
+                                    <input type="radio" ng-model="credentials.sexo" value="Femenino">Femenino
                                   </label>
                                 </div>
                               </li>
@@ -102,6 +102,10 @@
                           </div>
                         </div>
                          <div class="form-group" show-errors>
+                            <div class="form-group" show-errors>
+                                <label for="birthday">Fecha de Nacimiento</label>
+                                <input name="fecha" type="date" ng-model="credentials.fecnac" id="fecha" class="form-control" placeholder="Fecha" required>
+                              </div>
           <label for="firstName">Nombre</label>
           <input type="text" id="firstName" name="firstName" class="form-control" ng-model="credentials.firstName" placeholder="Nombre" required>
           <!--<div ng-messages="userForm.firstName.$error" role="alert">
@@ -128,6 +132,26 @@
           <input type="text" id="dni" name="dni" class="form-control" placeholder="DNI"  ng-model="credentials.dni" lowercase required>
         
         </div>
+        <div class="form-group" show-errors>
+            <label for="peso">Peso</label>
+            <input type="text" id="peso" name="peso" class="form-control" ng-model="credentials.peso" placeholder="Peso (ejemplo: 82,74)"
+              required>
+<!--<div style="display:none">
+              <input type="text" id="tarjeta" name="tarjeta" class="form-control" ng-model="credentials.tarjeta" placeholder="Peso (ejemplo: 82,74)"
+              required>
+              <input type="text" id="alergias" name="alergias" class="form-control" ng-model="credentials.alergias" placeholder="Peso (ejemplo: 82,74)"
+              required>
+              <input type="text" id="habitos" name="habitos" class="form-control" ng-model="credentials.habitos" placeholder="Peso (ejemplo: 82,74)"
+              required>
+          </div>-->
+            <!--<div ng-messages="userForm.firstName.$error" role="alert">
+ <p class="help-block error-text" ng-message="required">Nombre es requerido.</p>
+</div>-->
+          </div>
+          <div class="form-group" show-errors>
+            <label for="altura">Altura</label>
+            <input type="text" id="altura" name="altura" class="form-control" ng-model="credentials.altura" placeholder="Altura (ejemplo 1.76, 1.80)"
+              required>
                         <div class="form-group" show-errors>
           <label for="username">Usuario</label>
           <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Usuario" lowercase required>

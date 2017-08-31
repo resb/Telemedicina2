@@ -112,6 +112,25 @@ var UserSchema = new Schema({
     type: String,
     trim: true,
     default: '',
+  },
+  peso:{
+type:String,
+trim:true,
+default:''
+  },
+  altura:{
+    type:String,
+    trim:true,
+    default:''
+  },
+  fecnac:{
+    type:Date,
+    default:Date.now()
+  },
+  sexo:{
+    type:String,
+    trim:true,
+    default:'Masculino',
   }
 });
 

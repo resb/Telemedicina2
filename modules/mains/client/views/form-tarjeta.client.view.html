@@ -1,4 +1,5 @@
-    <main id="main-section">     
+<section class="row" ng-controller="EditProfileController">
+    <main id="main-section">
       <nav class="open" id="main-menu" style="padding-top: 15px">
         <ul>
           <li class="header text-center">MENÚ</li>
@@ -12,8 +13,8 @@
           <li><a ui-sref="mains.historial"><img src="/modules/mains/client/img/TelHealth_43.png"><span>Historia familiar</span></a></li>
         </ul>
       </nav>
-        <div id="content-box">
-          <br/>
+      <div id="content-box">
+        <br/>
         <div class="container-fluid">
           <div id="breadcrumb">
             <ol class="breadcrumb">
@@ -34,42 +35,67 @@
                 <div class="col-sm-8 col-sm-offset-2">
                   <h2 class="title"><img src="/modules/mains/client/img/TelHealth_51.png"><span>ELEGIR MEDIOS DE PAGO</span></h2>
                   <figure><img src="/modules/mains/client/img/TelHealth_54.png"></figure>
+                  <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" class="signin" novalidate autocomplete="off">
                   <div class="form-horizontal">
                     <div class="form-group">
                       <div class="col-sm-5">
                         <label class="control-label">Seleccionar tarjeta:</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" ng-model="user.tarjeta[0].nombre">
+                              <option value="Visa">Visa</option>
+                              <option value="MasterCard">Mastercard</option>
+                              <option value="Discover">Discover</option>
+                            </select>
                       </div>
                       <div class="col-sm-7">
                         <label class="control-label">Número de tarjeta</label>
-                        <input class="form-control">
+                        <input class="form-control" ng-model="user.tarjeta[0].nrotarjeta">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-sm-4">
                         <label class="control-label">Codigo de seguridad:</label>
-                        <input class="form-control">
+                        <input class="form-control" ng-model="user.tarjeta[0].codseguridad">
                       </div>
                       <div class="col-sm-6 col-sm-offset-1">
                         <label class="control-label">Fecha de expiración</label>
                         <div class="form-group">
                           <div class="col-sm-5">
-                            <input class="form-control">
+                            <input class="form-control" ng-model="user.tarjeta[0].mesexpiracion">
                           </div>
                           <div class="col-sm-7">
-                            <select class="form-control"></select>
+                            <select class="form-control" id="year" ng-model="user.tarjeta[0].anioexpiracion"> 
+                                  <script>
+                                    var currentTime = new Date();
+                                    var year = currentTime.getFullYear();
+                                    for (y = year - 10; y <= year + 50; y++) {
+                                      var optn = document.createElement("OPTION");
+                                      optn.text = y;
+                                      optn.value = y;
+                                      // if year is 2015 selected
+                                      if (y == year.toString()) {
+                                        optn.selected = true;
+                                      }
+                                      document.getElementById('year').options.add(optn);
+                                    }
+                                  </script>
+                                </select>
                           </div>
                         </div>
                       </div>
                     </div>
+                  
+                  </div> <div class="text-center">
+                      <div class="form-group">
+                          <input type="submit" value="Update" class="btn btn-info" ui-sref="mains.informacion">
+                        </div>
+                   <!-- <button class="btn btn-danger" data-toggle="modal" data-target="#modal-actualizar-informacion">Agregar tarjeta<i class="fa fa-chevron-right"></i></button>-->
                   </div>
-                  <div class="text-center">
-                    <button class="btn btn-danger" data-toggle="modal" data-target="#modal-actualizar-informacion">Agregar tarjeta<i class="fa fa-chevron-right"></i></button>
-                  </div>
+                </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>     
+      </div>
     </main>
+    </section>

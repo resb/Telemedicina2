@@ -165,7 +165,18 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
               email: providerUserProfile.email,
               profileImageURL: providerUserProfile.profileImageURL,
               provider: providerUserProfile.provider,
-              providerData: providerUserProfile.providerData
+              providerData: providerUserProfile.providerData,
+              fecnac: providerUserProfile.fecnac,
+              peso: providerUserProfile.peso,
+              altura: providerUserProfile.altura,
+              /*tarjeta:providerUserProfile.tarjeta,
+              alergias: providerUserProfile.alergias,
+              habitosA:providerUserProfile.habitosA,
+              habitosF:providerUserProfile.habitosF,
+              enfermedadesPre:providerUserProfile.enfermedadesPre,
+              tratamientosA:providerUserProfile.tratamientosA,
+              OperacionesR:providerUserProfile.OperacionesR,
+              historiaF:providerUserProfile.historiaF*/
             });
 
             // And save the user

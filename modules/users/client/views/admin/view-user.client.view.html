@@ -44,10 +44,37 @@
       </div>
       <hr/>
       <div class="row">
+        <div class="col-md-3"><strong>Fecha de Nacimiento</strong></div>
+        <div class="col-md-6" ng-bind="user.fecnac | date : 'dd/MM/yyyy '"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Altura</strong></div>
+        <div class="col-md-6" ng-bind="user.altura"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Peso</strong></div>
+        <div class="col-md-6" ng-bind="user.peso"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Sexo</strong></div>
+        <div class="col-md-6" ng-bind="user.sexo"></div>
+      </div>
+      <hr/>
+      <div class="row">
         <div class="col-md-3"><strong>Roles</strong></div>
         <div class="col-md-6" ng-bind="user.roles"></div>
       </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Password</strong></div>
+        <div class="col-md-6" ng-bind="user.contrasenaZoom"></div>
+      </div>
+
     </div>
+
     <div class="col-md-4">
         <figure><img ng-src="{{user.profileImageURL}}" style="margin-top:25px; height: 211px; width: 180px"></figure>
     </div>
