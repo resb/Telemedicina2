@@ -1,0 +1,28 @@
+<section>
+    <div class="container">
+    <div class="right" style="padding-top:50px">
+    <input class="btn btn-info right" type="button" value="Nuevo" ui-sref="tarjetas.create"/>
+    </div>
+    <div class="page-header">
+      <h1>Tarjetas</h1>    
+    </div>
+    <div class="list-group">
+      <a ng-repeat="tarjeta in vm.tarjetas"
+         ui-sref="tarjetas.view({ tarjetaId: tarjeta._id })"
+         class="list-group-item">
+        <small class="list-group-item-text">
+          Created on
+          <span ng-bind="tarjeta.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="tarjeta.user" ng-bind="tarjeta.user.displayName"></span>
+          <span ng-if="!tarjeta.user">Deleted User</span>
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="tarjeta.nombre"></h4>
+      </a>
+    </div>
+    <div class="alert alert-warning text-center" ng-if="vm.tarjetas.$resolved && !vm.tarjetas.length">
+      No Tarjetas yet, why don't you <a ui-sref="tarjetas.create">create one</a>?
+    </div>
+    </div>
+  </section>
+  

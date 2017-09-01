@@ -21,7 +21,16 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/tarjetas/:tarjetaId',
       permissions: '*'
     }]
-  }, {
+  },/*{
+    roles: ['admin'],
+    allows: [{
+      resources: '/api/tarjetas',
+      permissions: '*'
+    }, {
+      resources: '/api/tarjetas/:userId',
+      permissions: '*'
+    }]
+  }*/, {
     roles: ['user'],
     allows: [{
       resources: '/api/tarjetas',

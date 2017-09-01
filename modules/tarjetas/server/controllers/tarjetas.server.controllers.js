@@ -82,6 +82,19 @@
           });
       };
 
+   /*   exports.listforUser=function (req,res) {
+        var tarjeta = req.tarjeta?req.tarjeta.toJSON():{};
+        Tarjeta.find({"user":ObjectId(req.tarjeta.userId)}).sort('-created').populate('user','displayName').exec(function (err,tarjetas) {
+            if (err) {
+                return res.status(400).send({
+                    message: errorHandler.getErrorMessage(err)
+                });
+            }else{
+                res.jsonp(tarjetas)
+            }
+        });
+    };*/
+
       /**
        * Tarjeta middleware
        */

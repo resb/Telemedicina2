@@ -19,8 +19,17 @@
           templateUrl: 'modules/tarjetas/client/views/list-tarjetas.client.view.html',
           controller: 'TarjetasListController',
           controllerAs: 'vm',
-          data: {
+          data: {roles: ['admin'],
             pageTitle: 'Tarjetas List'
+          }
+        })
+        .state('tarjetas.listforUser', {
+          url: '',
+          templateUrl: 'modules/tarjetas/client/views/list-tarjetas-forUser.client.view.html',
+          controller: 'TarjetasListController',
+          controllerAs: 'vm',
+          data: {
+            pageTitle: 'Tarjetas List for User'
           }
         })
         .state('tarjetas.create', {
@@ -57,7 +66,7 @@
           resolve: {
             tarjetaResolve: getTarjeta
           },
-          data: {
+          data: {roles: ['admin'],
             pageTitle: 'Tarjeta {{ tarjetaResolve.name }}'
           }
         });

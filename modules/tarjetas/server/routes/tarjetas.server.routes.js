@@ -11,6 +11,9 @@ module.exports = function(app) {
   app.route('/api/tarjetas').all(tarjetasPolicy.isAllowed)
     .get(tarjetas.list)
     .post(tarjetas.create);
+  
+  /*  app.route('/api/tarjetas/:usuarioId').all(tarjetasPolicy.isAllowed)
+    .get(tarjetas.listforUser);*/
 
   app.route('/api/tarjetas/:tarjetaId').all(tarjetasPolicy.isAllowed)
     .get(tarjetas.read)

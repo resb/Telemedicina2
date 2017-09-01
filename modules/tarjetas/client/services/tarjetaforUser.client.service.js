@@ -4,11 +4,11 @@
   
     angular
       .module('tarjetas')
-      .factory('TarjetasService', TarjetasService);
+      .factory('TarjetasforUserService', TarjetasforUserService);
   
-    TarjetasService.$inject = ['$resource'];
+      TarjetasforUserService.$inject = ['$resource'];
   
-    function TarjetasService($resource) {
+   /* function TarjetasService($resource) {
       return $resource('api/tarjetas/:tarjetaId', {
         tarjetaId: '@_id'
       }, {
@@ -16,16 +16,16 @@
           method: 'PUT'
         }
       });
-    }
+    }*/
 
-  /*  function TarjetasforUserService($resource) {
+  function TarjetasforUserService($resource) {
       return $resource('api/tarjetas/:userId', {
-        tarjetaId: '@_id'
+        userId: '@_id'
       }, {
         update: {
           method: 'PUT'
         }
       });
-    }*/
+    }
   }());
   

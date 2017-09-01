@@ -12,5 +12,10 @@
   
       vm.tarjetas = TarjetasService.query();
     }
+
+  /*  function TarjetasListForUser(TarjetasforUserService){
+      var vmx=this;
+      vm.tarjetas=TarjetasService.query();
+    }*/
   }());
   
