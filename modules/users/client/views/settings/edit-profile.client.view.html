@@ -1,4 +1,5 @@
 <section class="row" ng-controller="EditProfileController">
+  
   <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4">
     <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
@@ -25,7 +26,7 @@
           </div>
         </div>
 
-        <input date name="fecha" type="text" ng-model="user.fecnac" id="fecha" class="form-control" required>
+        <input date name="fecha" type="text" ng-model="user.fecnac | date:'dd/MM/yyyy'" id="fecha" class="form-control" required>
 
         <div class="form-group" show-errors>
           <label for="peso">Peso</label>
@@ -52,6 +53,8 @@
           </div>
         </div>
         
+        
+
         <div class="form-group" show-errors>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" class="form-control" ng-model="user.username" placeholder="Username" lowercase required>
