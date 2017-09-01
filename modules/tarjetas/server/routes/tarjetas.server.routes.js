@@ -10,6 +10,7 @@ module.exports = function(app) {
   // Specialties Routes
   app.route('/api/tarjetas').all(tarjetasPolicy.isAllowed)
     .get(tarjetas.list)
+    .get(tarjetas.listforUser)
     .post(tarjetas.create);
   
   /*  app.route('/api/tarjetas/:usuarioId').all(tarjetasPolicy.isAllowed)

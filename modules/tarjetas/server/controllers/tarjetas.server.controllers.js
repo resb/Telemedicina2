@@ -82,7 +82,7 @@
           });
       };
 
-   /*   exports.listforUser=function (req,res) {
+      exports.listforUser=function (req,res) {
         var tarjeta = req.tarjeta?req.tarjeta.toJSON():{};
         Tarjeta.find({"user":ObjectId(req.tarjeta.userId)}).sort('-created').populate('user','displayName').exec(function (err,tarjetas) {
             if (err) {
@@ -93,7 +93,7 @@
                 res.jsonp(tarjetas)
             }
         });
-    };*/
+    };
 
       /**
        * Tarjeta middleware
