@@ -17,7 +17,7 @@
               <span ng-if="alergia.user" ng-bind="alergia.user.displayName"></span>
               <span ng-if="!alergia.user">Deleted User</span>
             </small>
-            <h4 class="list-group-item-heading" ng-bind="alergia.name"></h4>
+            <h4 class="list-group-item-heading" ng-bind="alergia.tipoalergia"></h4>
           </a>
         </div>
         <div class="alert alert-warning text-center" ng-if="vm.alergias.$resolved && !vm.alergias.length">

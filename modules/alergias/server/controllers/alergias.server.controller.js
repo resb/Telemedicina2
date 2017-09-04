@@ -5,7 +5,7 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Specialty = mongoose.model('Alergia'),
+  Alergia = mongoose.model('Alergia'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
@@ -66,7 +66,7 @@ exports.update = function(req, res) {
 exports.delete = function(req, res) {
   var alergia = req.alergia;
 
-  specialty.remove(function(err) {
+  alergia.remove(function(err) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
