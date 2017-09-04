@@ -1,0 +1,28 @@
+<section>
+        <div class="container">
+        <div class="right" style="padding-top:50px">
+        <input class="btn btn-info right" type="button" value="Nuevo" ui-sref="alergias.create"/>
+        </div>
+        <div class="page-header">
+          <h1>Alergias</h1>    
+        </div>
+        <div class="list-group">
+          <a ng-repeat="alergia in vm.alergias"
+             ui-sref="alergias.view({ alergiaId: alergia._id })"
+             class="list-group-item">
+            <small class="list-group-item-text">
+              Created on
+              <span ng-bind="alergia.created | date:'mediumDate'"></span>
+              by
+              <span ng-if="alergia.user" ng-bind="alergia.user.displayName"></span>
+              <span ng-if="!alergia.user">Deleted User</span>
+            </small>
+            <h4 class="list-group-item-heading" ng-bind="alergia.name"></h4>
+          </a>
+        </div>
+        <div class="alert alert-warning text-center" ng-if="vm.alergias.$resolved && !vm.alergias.length">
+          No Alergias yet, why don't you <a ui-sref="alergias.create">create one</a>?
+        </div>
+        </div>
+      </section>
+      

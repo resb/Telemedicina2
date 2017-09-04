@@ -1,0 +1,29 @@
+<section>
+        <div class="container">
+        <div class="page-header">
+          <h1 ng-bind="vm.alergia.name"></h1>
+        </div>
+        <div class="pull-right"
+             ng-show="vm.alergia.isCurrentUserOwner">
+          <a class="btn btn-primary"
+             ui-sref="alergias.edit({ alergiaId: vm.alergia._id })">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn btn-primary" ng-click="vm.remove()">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </div>
+        <small>
+          <em class="text-muted">
+            Created on
+            <span ng-bind="vm.alergia.created | date:'mediumDate'"></span>
+            by
+            <span ng-if="vm.alergia.user"
+                  ng-bind="vm.alergia.user.displayName"></span>
+            <span ng-if="!vm.alergia.user">Deleted User</span>
+          </em>
+        </small>
+        <p class="lead" ng-bind="vm.alergia.content"></p>
+        </div>
+      </section>
+      
