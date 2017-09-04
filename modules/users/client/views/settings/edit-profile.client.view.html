@@ -28,21 +28,13 @@
 
         <!-- -->
           <div class="form-group" show-errors="">
-          <label class="control-label" for="name">Fecha</label>
-          <div class="col-md-12" style="padding: 0">
-            <div class="col-md-6" style="padding: 0">
+          <label class="control-label" for="name">Fecha de Nacimiento</label>
           <input name="fecha" type="date" ng-model="user.fecnac" id="fecha" class="form-control ng-pristine ng-valid ng-valid-required ng-touched" placeholder="Fecha" required="">
             </div>
-            </div></div>
+           
         <!-- -->
         
-        <div class="form-group" show-errors>
-          <label for="Lfecnac">Fecha de Nacimiento</label>
-          <input date name="fecha" type="text" ng-model="user.fecnac" id="fecha" class="form-control" required>
-          <div ng-messages="userForm.fecnac.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Fecha de is required.</p>
-          </div>
-        </div>
+
         <div class="form-group" show-errors>
           <label for="peso">Peso</label>
           <input type="peso" id="peso" name="peso" class="form-control" ng-model="user.peso" placeholder="Peso"  required>

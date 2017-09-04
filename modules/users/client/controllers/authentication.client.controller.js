@@ -4,7 +4,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$stat
   function ($scope, $state, $http, $location, $window, Authentication, PasswordValidator, toastr) {
     $scope.authentication = Authentication;
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
-    $scope.user.fecnac = new Date($scope.user.fecnac);
+   // $scope.user.fecnac = new Date($scope.user.fecnac);
     $scope.emailExist = true;
     $scope.flagCheck = false;
     $scope.flagButton = false;
