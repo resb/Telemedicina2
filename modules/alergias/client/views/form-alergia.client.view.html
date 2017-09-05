@@ -7,10 +7,24 @@
           <form name="vm.form.alergiaForm" class="form-horizontal" ng-submit="vm.save(vm.form.alergiaForm.$valid)" novalidate>
             <fieldset>
               <div class="form-group" show-errors>
-                <label class="control-label" for="name">Name</label>
-                <input name="name" type="text" ng-model="vm.alergia.name" id="name" class="form-control" placeholder="Name" required>
+                <label class="control-label" for="Ltipoalergia">Tipo de Alergia</label>
+                <input name="tipoalergia" type="text" ng-model="vm.alergia.tipoalergia" id="tipoalergia" class="form-control" placeholder="tipo de alergia" required>
                 <div ng-messages="vm.form.alergiaForm.name.$error" role="alert">
-                  <p class="help-block error-text" ng-message="required">Alergia name is required.</p>
+                  <p class="help-block error-text" ng-message="required">Tipo de alergia is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <label class="control-label" for="sintomas">Sintomas</label>
+                <input name="sintomas" type="text" ng-model="vm.alergia.sintomas" id="sintomas" class="form-control" placeholder="sintomas" required>
+                <div ng-messages="vm.form.alergiaForm.name.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Sintoma is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <label class="control-label" for="Ltratamiento">Tratamiento</label>
+                <input name="tratamiento" type="text" ng-model="vm.alergia.tratamiento" id="tratamiento" class="form-control" placeholder="Tratamiento" required>
+                <div ng-messages="vm.form.alergiaForm.name.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Tratamiento is required.</p>
                 </div>
               </div>
               <div class="form-group">

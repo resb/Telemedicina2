@@ -1,7 +1,7 @@
 (function () {
     'use strict';
   
-    // Specialties controller
+    // Alergias controller
     angular
       .module('alergias')
       .controller('AlergiasController', AlergiasController);

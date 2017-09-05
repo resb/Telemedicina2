@@ -1,7 +1,7 @@
 <section>
         <div class="container">
         <div class="page-header">
-          <h1 ng-bind="vm.alergia.name"></h1>
+          <h1 ng-bind="vm.alergia.tipoalergia"></h1>
         </div>
         <div class="pull-right"
              ng-show="vm.alergia.isCurrentUserOwner">
@@ -13,6 +13,8 @@
             <i class="glyphicon glyphicon-trash"></i>
           </a>
         </div>
+        <span class="lead">sintomas: </span><span class="lead" ng-bind="vm.alergia.sintomas"></span><br>
+        <span class="lead">tratamiento: </span><span class="lead" ng-bind="vm.alergia.tratamiento"></span><br>
         <small>
           <em class="text-muted">
             Created on
@@ -22,8 +24,8 @@
                   ng-bind="vm.alergia.user.displayName"></span>
             <span ng-if="!vm.alergia.user">Deleted User</span>
           </em>
-        </small>
-        <p class="lead" ng-bind="vm.alergia.content"></p>
+        </small><br>
+       
         </div>
       </section>
       

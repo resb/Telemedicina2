@@ -71,7 +71,7 @@
       }).$promise;
     }
   
-    newAlergia.$inject = ['AlergiaService'];
+    newAlergia.$inject = ['AlergiasService'];
   
     function newAlergia(AlergiasService) {
       return new AlergiasService();

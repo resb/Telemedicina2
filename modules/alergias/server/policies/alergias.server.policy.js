@@ -48,7 +48,7 @@ exports.invokeRolesPolicies = function () {
 exports.isAllowed = function (req, res, next) {
   var roles = (req.user) ? req.user.roles : ['guest'];
 
-  // If an Specialty is being processed and the current user created it then allow any manipulation
+  // If an Alergia is being processed and the current user created it then allow any manipulation
   if (req.alergia && req.user && req.alergia.user && req.alergia.user.id === req.user.id) {
     return next();
   }

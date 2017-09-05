@@ -6,6 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
+  Tarjeta=mongoose.model('Tarjeta'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
@@ -67,6 +68,20 @@ exports.list = function (req, res) {
     }
 
     res.json(users);
+  });
+};
+
+exports.listforUser=function (req,res) {
+
+ // var user = req.user?req.user.toJSON():{};
+  Tarjeta.find({"user":ObjectId(req.user.userId)}).exec(function (err,tarjetas) {
+      if (err) {
+          return res.status(400).send({
+              message: errorHandler.getErrorMessage(err)
+          });
+      }else{
+          res.jsonp(tarjetas)
+      }
   });
 };
 
