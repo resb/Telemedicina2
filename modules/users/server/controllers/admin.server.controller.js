@@ -66,7 +66,6 @@ exports.list = function (req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     }
-
     res.json(users);
   });
 };
@@ -84,6 +83,35 @@ exports.listforUser=function (req,res) {
   });
 };
 
+exports.listforUser=function (req,res) {
+  var userId =req.model._id;
+  console.log(req.model);
+  Tarjeta.find({user:userId}).exec(function (err,tarjetas) {
+    if (err) {
+      return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+      });
+  }else{
+      res.jsonp(tarjetas)
+  }
+  });
+};
+
+exports.listforUserID=function (req,res) {
+  var userId =req.model._id;
+  var tarjetaId=req.params.tarjetaId;
+  //var tarjetaId=req.model.
+  console.log(req.model);
+  Tarjeta.find({user:userId,_id:tarjetaId}).exec(function (err,tarjetas) {
+    if (err) {
+      return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+      });
+  }else{
+      res.jsonp(tarjetas)
+  }
+  });
+};
 /**
  * User middleware
  */
@@ -102,5 +130,24 @@ exports.userByID = function (req, res, next, id) {
     }
     req.model = user;
     next();
+  });
+};
+
+exports.tarjetaByID=function (req,res,next,id) {
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).send({
+          message: 'Tarjeta es invalida'
+      });
+  }
+  Tarjeta.findById(id).populate('user','displayName').exec(function (err,tarjeta) {
+      if (err) {
+          return next(err);
+      }else if (!tarjeta) {
+          return res.status(400).send({
+              message:'No Tarjeta with that identifier has benn found'
+          });
+      }
+      req.tarjeta=tarjeta;
+      next();
   });
 };

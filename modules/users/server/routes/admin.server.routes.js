@@ -22,6 +22,10 @@ module.exports = function (app) {
   //Tarjetas  by User
   app.route('/api/users/:userId/tarjetas')
     .get(adminPolicy.isAllowed, admin.listforUser)
+  
+  app.route('/api/users/:userId/tarjetas/:tarjetaId')
+    .get(adminPolicy.isAllowed, admin.listforUserID)
   // Finish by binding the user middleware
   app.param('userId', admin.userByID);
+  app.param('tarjetaId', admin.tarjetaByID);
 };

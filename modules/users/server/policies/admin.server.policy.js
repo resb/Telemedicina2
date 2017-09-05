@@ -25,6 +25,11 @@ exports.invokeRolesPolicies = function () {
       resources: '/api/users/:userId/tarjetas',
       permissions: '*'
     }////
+    ,
+    {///
+      resources: '/api/users/:userId/tarjetas/:tarjetaId',
+      permissions: '*'
+    }
   ]
   }]);
 };
