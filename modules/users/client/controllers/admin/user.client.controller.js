@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('users.admin').controller('UserController', ['$scope', '$state', 'Authentication', 'userResolve',
-  function ($scope, $state, Authentication, userResolve) {
+angular.module('users.admin').controller('UserController', ['$scope', '$state', 'Authentication', 'userResolve',function ($scope, $state, Authentication, userResolve) {
     $scope.authentication = Authentication;
     $scope.user = userResolve;
-   // $scope.tarjeta=tarjetaResolve;
+    //$scope.tarjeta=tarjetaResolve;
     $scope.user.fecnac = new Date($scope.user.fecnac);
    
     $scope.remove = function (user) {
