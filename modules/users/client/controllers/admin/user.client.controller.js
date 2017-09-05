@@ -4,6 +4,7 @@ angular.module('users.admin').controller('UserController', ['$scope', '$state', 
   function ($scope, $state, Authentication, userResolve) {
     $scope.authentication = Authentication;
     $scope.user = userResolve;
+   // $scope.tarjeta=tarjetaResolve;
     $scope.user.fecnac = new Date($scope.user.fecnac);
    
     $scope.remove = function (user) {

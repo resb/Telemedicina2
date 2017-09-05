@@ -92,7 +92,8 @@ exports.listforUser=function (req,res) {
           message: errorHandler.getErrorMessage(err)
       });
   }else{
-      res.jsonp(tarjetas)
+      res.jsonp(tarjetas);
+      console.log(tarjetas);
   }
   });
 };
@@ -101,7 +102,7 @@ exports.listforUserID=function (req,res) {
   var userId =req.model._id;
   var tarjetaId=req.params.tarjetaId;
   //var tarjetaId=req.model.
-  console.log(req.model);
+  console.log(tarjetaId);
   Tarjeta.find({user:userId,_id:tarjetaId}).exec(function (err,tarjetas) {
     if (err) {
       return res.status(400).send({
