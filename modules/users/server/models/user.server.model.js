@@ -18,7 +18,7 @@ var validateLocalStrategyProperty = function (property) {
 };
 
 /**
- * A Validation function for local strategy email
+ *  A Validationn function for local strategy email
  */
 var validateLocalStrategyEmail = function (email) {
   return ((this.provider !== 'local' && !this.updated) || validator.isEmail(email));
@@ -133,6 +133,7 @@ default:''
     default:'Masculino',
   }
 });
+
 
 /**
  * Hook a pre save method to hash the password

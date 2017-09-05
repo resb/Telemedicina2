@@ -19,7 +19,7 @@ module.exports = function (app) {
     .get(adminPolicy.isAllowed, admin.read)
     .put(adminPolicy.isAllowed, admin.update)
     .delete(adminPolicy.isAllowed, admin.delete);
-
+  //Tarjetas  by User
   app.route('/api/users/:userId/tarjetas')
     .get(adminPolicy.isAllowed, admin.listforUser)
   // Finish by binding the user middleware

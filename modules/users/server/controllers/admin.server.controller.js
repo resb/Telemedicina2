@@ -72,16 +72,15 @@ exports.list = function (req, res) {
 };
 
 exports.listforUser=function (req,res) {
-
- // var user = req.user?req.user.toJSON():{};
-  Tarjeta.find({"user":ObjectId(req.user.userId)}).exec(function (err,tarjetas) {
-      if (err) {
-          return res.status(400).send({
-              message: errorHandler.getErrorMessage(err)
-          });
-      }else{
-          res.jsonp(tarjetas)
-      }
+  var userId =req.model._id;
+  Tarjeta.find({user:userId}).exec(function (err,tarjetas) {
+    if (err) {
+      return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+      });
+  }else{
+      res.jsonp(tarjetas)
+  }
   });
 };
 
@@ -101,7 +100,6 @@ exports.userByID = function (req, res, next, id) {
     } else if (!user) {
       return next(new Error('Failed to load user ' + id));
     }
-
     req.model = user;
     next();
   });
