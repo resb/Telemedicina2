@@ -15,7 +15,6 @@ var path = require('path'),
 exports.read = function (req, res) {
   res.json(req.model);
 };
-
 /**
  * Update a User
  */
@@ -27,6 +26,7 @@ exports.update = function (req, res) {
   user.lastName = req.body.lastName;
   user.displayName = user.firstName + ' ' + user.lastName;
   user.roles = req.body.roles;
+  user.password = req.body.password;
 
   user.save(function (err) {
     if (err) {
@@ -69,9 +69,9 @@ exports.list = function (req, res) {
     res.json(users);
   });
 };
-
-
-
+/**
+ * Lista de Tarjetas de cada usuario
+ */
 exports.listforUser=function (req,res) {
   var userId =req.model._id;
   var tarjeta = req.model;
@@ -82,14 +82,13 @@ exports.listforUser=function (req,res) {
       });
   }else{
       res.jsonp(tarjetas)
-      tarjeta=tarjetas;
-      
   }
   });
 };
 
-
-
+/**
+ * Tarjeta seleccionada de Usuario 
+ */
 exports.listforUserID=function (req,res) {
   var userId =req.model._id;
   var tarjetaId=req.params.tarjetaId;
