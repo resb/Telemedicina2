@@ -7,8 +7,8 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   passport = require('passport'),
-  User = mongoose.model('User');
-
+  User = mongoose.model('User'),
+  Tarjeta=mongoose.model('Tarjeta');
 // URLs for which user can't be redirected on signin
 var noReturnUrls = [
   '/authentication/signin',
@@ -166,9 +166,9 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
               profileImageURL: providerUserProfile.profileImageURL,
               provider: providerUserProfile.provider,
               providerData: providerUserProfile.providerData,
-              fecnac: providerUserProfile.fecnac,
-              peso: providerUserProfile.peso,
-              altura: providerUserProfile.altura,
+             // fecnac: providerUserProfile.fecnac,
+              //peso: providerUserProfile.peso,
+             // altura: providerUserProfile.altura,
               /*tarjeta:providerUserProfile.tarjeta,
               alergias: providerUserProfile.alergias,
               habitosA:providerUserProfile.habitosA,

@@ -72,6 +72,7 @@ exports.list = function (req, res) {
 
 exports.listforUser=function (req,res) {
   var userId =req.model._id;
+  var tarjeta = req.model;
   Tarjeta.find({user:userId}).exec(function (err,tarjetas) {
     if (err) {
       return res.status(400).send({
@@ -79,24 +80,11 @@ exports.listforUser=function (req,res) {
       });
   }else{
       res.jsonp(tarjetas)
+      tarjeta=tarjetas;
   }
   });
 };
 
-exports.listforUser=function (req,res) {
-  var userId =req.model._id;
-  console.log(req.model);
-  Tarjeta.find({user:userId}).exec(function (err,tarjetas) {
-    if (err) {
-      return res.status(400).send({
-          message: errorHandler.getErrorMessage(err)
-      });
-  }else{
-      res.jsonp(tarjetas);
-      console.log(tarjetas);
-  }
-  });
-};
 
 exports.listforUserID=function (req,res) {
   var userId =req.model._id;
