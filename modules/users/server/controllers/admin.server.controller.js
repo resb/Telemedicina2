@@ -70,6 +70,8 @@ exports.list = function (req, res) {
   });
 };
 
+
+
 exports.listforUser=function (req,res) {
   var userId =req.model._id;
   var tarjeta = req.model;
@@ -81,9 +83,11 @@ exports.listforUser=function (req,res) {
   }else{
       res.jsonp(tarjetas)
       tarjeta=tarjetas;
+      
   }
   });
 };
+
 
 
 exports.listforUserID=function (req,res) {

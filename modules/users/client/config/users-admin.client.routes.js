@@ -37,19 +37,6 @@ angular.module('users.admin.routes').config(['$stateProvider',
         url: '/users/:userId/tarjetas',
         templateUrl: 'modules/users/client/views/admin/list-tarjetas-forUser.client.view.html',
         controller: 'UserController',
-     /*   resolve: {
-          userResolve: ['$stateParams', 'Admin', function ($stateParams, Admin) {
-            return Admin.get({
-              userId: $stateParams.userId
-            });
-          }]
-        ,
-      tarjetaResolve:['$stateParams', 'Admin', function ($stateParams, Admin) {
-        return Admin.get({
-          tarjetaId: $stateParams.tarjetaId
-        });
-      }]
-        }*/
       })
       ;
   }
